@@ -5,7 +5,7 @@ let PORT = process.env.PORT || 3020;
 //requiring dependencies
 app.use(express.json());
 app.use(express.urlencoded({extended:true}));
-app.use(express.static("public/"));
+app.use(express.static("public"));
 
 //requiring routes
 require("./routes/html-routes")(app);
