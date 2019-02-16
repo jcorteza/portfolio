@@ -1,8 +1,8 @@
-module.export = (app) => {
+const path = require("path");
+module.exports = (app) => {
     // html route for homepage
     app.get("/", (req, res) => {
-        console.log("getting homepage html route");
-        res.status(200).sendFile("../public/html/home.html");
+        res.status(200).sendFile(path.join(__dirname,"../public/html/home.html"));
     });
     //html route for about page
     app.get("/about", (req, res) => {

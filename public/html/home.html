@@ -3,10 +3,12 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylsheet" type="text/css" href="/css/reset.css"/>
+    <link rel="stylsheet" type="text/css" href="/css/main.css"/>
     <title>Josephine Cortez-Ayala | Web Developer</title>
 </head>
 <body>
-    <div id="home">
+    <div id="home" class="main">
         <h2>Josephine Cortez-Ayala</h2>
         <h1>Full-Stack Web Developer</h1>
         <div class="white-bg">
@@ -20,7 +22,7 @@
             </nav>
         </div>
     </div>
-    <div id="about">
+    <div id="about" class="main">
         <div class="white-bg">
             <h2>About Me</h2>
             <img src="../images/jcorteza-face.jpg"/>
@@ -30,31 +32,41 @@
             <p>I’ve recently completed a full-stack web-development certification sponsored by UT Austin and am in search of my first web-development opportunity. In the meantime, I’ll be learning new skills, reading up on upcoming trends in the field, and coding side projects.</p>
         </div>
     </div>
-    <div id="contact">
+    <div id="contact" class="main">
         <div>
             <form autocomplete="on">
                 <fieldset>
                     <label for="subjectInput">Subject:</label>
-                    <input 
-                    <input id="subjectInput" name="subject" type="text" placeholder="Just Saying Hi" maxlength="150" autofocus/>
+                    </br>
+                    <select id="subjectSelect" autofocus required>
+                        <option value="">--Please Choose an Option--</option>
+                        <option value="hi">Just Saying Hi</option>
+                        <option value="project">New Project Idea</option>
+                        <option value="quote">Requesting Quote</option>
+                        <option value="question">Asking a Question</option>
+                        <option value="other">Other</option>
+                    </select> 
                 </fieldset>
                 <fieldset>
                     <label for="nameInput">Name:</label>
+                    </br>
                     <input id="nameInput" name="name"type="text" placeholder="Joan Doe" maxlength="150"/>
                 </fieldset>
                 <fieldset>
                     <label for="emailInput">Email:</label>
+                    </br>
                     <input id="emailInput" name="email" type="email" placeholder="joanDoe@email.com"required/>
                 </fieldset>
                 <fieldset>
                     <label for="messageInput">Message:</label>
+                    </br>
                     <textarea id="messageInput" name="message" required >Type your message here...</textarea>
                 </fieldset>
                 <button type="submit">Send Message</button>
             </form>
         </div>
     </div>
-    <div id="confirmation"></div>
-    <div id="portfolio"></div>
+    <div id="confirmation" class="main"></div>
+    <div id="portfolio" class="main"></div>
 </body>
 </html>
