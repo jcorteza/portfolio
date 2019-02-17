@@ -2,7 +2,7 @@ const path = require("path");
 module.exports = (app) => {
     // html route for homepage
     app.get("/", (req, res) => {
-        res.status(200).sendFile(path.join(__dirname,"../public/home.html"));
+        res.status(200).sendFile(path.join(__dirname,"../views/home.html"));
     });
     //html route for about page
     app.get("/about", (req, res) => {
