@@ -1,0 +1,1 @@
+export const ROLE = 'Full-Stack Software Engineer';

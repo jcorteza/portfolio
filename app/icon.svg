@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+    <style>
+        .favicon-fill { fill: #d5f2e3 }
+        .highlight-stroke { stroke: #ffffff }
+        @media (prefers-color-scheme: dark) {
+            .favicon-fill { fill: #73ba9b }
+            .highlight-stroke { stroke: #d5f2e3 }
+        }
+    </style>
+    <defs><clipPath id="jcb"><rect x="39.5" y="46" width="10" height="28"/></clipPath></defs>
+    <path class="favicon-fill" d="M50 4 L96 50 L50 96 L4 50 Z" stroke="#003e1f" stroke-width="5"/>
+    <path class="highlight-stroke" d="M50 11 L89 50 L50 89 L11 50 Z" fill="none" stroke-width="2"/>
+    <g transform="translate(50 50) scale(.78) translate(-54.73 -47.21)">
+        <path d="M70.5 46 A13 13 0 0 0 44.5 46 L44.5 65 A13 13 0 0 0 70.5 65" fill="none" stroke="#003e1f" stroke-width="6.5" stroke-linejoin="round"/>
+        <path class="highlight-stroke" d="M53 10 L53 52 A12 12 0 0 1 29 52 L29 47" fill="none" stroke-width="10.5" stroke-linejoin="round"/>
+        <path d="M53 10 L53 52 A12 12 0 0 1 29 52 L29 47" fill="none" stroke="#003e1f" stroke-width="6.5" stroke-linejoin="round"/>
+        <g clip-path="url(#jcb)">
+            <path d="M70.5 46 A13 13 0 0 0 44.5 46 L44.5 65 A13 13 0 0 0 70.5 65" fill="none" stroke="#003e1f" stroke-width="6.5" stroke-linejoin="round"/>
+        </g>
+    </g>
+</svg>

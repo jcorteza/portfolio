@@ -1,26 +1,121 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+    --background: #ffffff;
+    --foreground: #171717;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background:
+    radial-gradient(50% 40% at 80% 15%, var(--color-bg-glow), transparent 70%),
+    var(--page-gradient);
+}
+
+@theme {
+    /* Brand palette (unchanged across themes) */
+    --color-brand-rust: #ba2d0b;
+    --color-brand-mint: #d5f2e3;
+    --color-brand-sage: #73ba9b;
+    --color-brand-forest: #003e1f;
+    --color-brand-ink: #01110a;
+    
+    /* Accent */
+    --color-accent: var(--color-brand-rust);
+    --color-accent-hover: #8f2108;
+    --color-accent-active: #6b1805;
+    --color-on-accent: white;
+
+    /* Surfaces & edges */
+    --color-surface: #ffffff;
+    --color-card-edge: var(--color-brand-ink);
+    --color-card-line:#01110a1f;
+
+    /* Focus & status */
+    --color-focus-ring: var(--color-brand-forest);
+    --color-error: #9b1c31;
+    --color-success:#0a6a35;
+
+    /* Tags & press */
+    --color-tag-bg: var(--color-brand-mint);
+    --color-tag-ink: var(--color-brand-forest);
+    --color-press-bg: #a6d8c0;
+
+    /* Page gradient */
+    --color-bg-a: var(--color-brand-mint);
+    --color-bg-b: var(--color-brand-sage);
+    --color-bg-c: #f5d3c4;
+    --color-bg-glow: #ffb09ab3;
+    --page-gradient: linear-gradient(165deg,var(--color-bg-a) 0%,var(--color-bg-b) 52%,var(--color-bg-c) 100%);
+
+    /* Spacing */
+    --spacing-sp-1: 4px;
+    --spacing-sp-2: 8px;
+    --spacing-sp-3: 12px;
+    --spacing-sp-4: 16px;
+    --spacing-sp-5: 24px;
+    --spacing-sp-6: 32px;
+    --spacing-sp-7: 56px;
+    --spacing-sp-8: 96px;
+    --tap-target: 48px;
+    --container-max: 1120px;
+    --radius-none: 0;
+    --radius-button: 4px;
+    
+    /* Semantic aliases */
+    --card-gap: var(--spacing-sp-6);
+    --page-gutter: var(--spacing-sp-4);
+    /* color-scheme:light;*/
+
+    /* Display (heading family, weight 400 only, uppercase) */
+    --display-xl-size: clamp(3.4rem,15vw,8.5rem);
+    --display-xl-max: 136px;
+    --display-xl-lh: 0.86;/* @kind font */
+    --display-xl-ls: -0.01em;/* @kind font */
+    --display-lg-size: 72px;
+    --display-lg-lh: 0.95;/* @kind font */
+    /* Text (body family) */
+    --heading-3-size: 28px;
+    --heading-3-lh: 1.15;/* @kind font */
+    --heading-3-weight: 700;/* @kind font */
+    --body-lg-size: 21px;
+    --body-lg-lh: 1.5;/* @kind font */
+    --body-size: 18px;
+    --body-lh: 1.6;/* @kind font */
+    --caption-size: 15px;
+    --caption-lh: 1.45;/* @kind font */
+    --eyebrow-size: 15px;
+    --eyebrow-lh: 1.2;/* @kind font */
+    --eyebrow-ls: 0.08em;/* @kind font */
+    --eyebrow-weight: 700;/* @kind font */
+    --button-size: 18px;
+    --button-lh: 1;/* @kind font */
+    --button-weight: 700;/* @kind font */
+    /* Semantic aliases */
+    --color-body-text: var(--ink);
+    --color-secondary-text: var(--ink-muted);
+    --color-link-text: var(--accent);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+    --color-background: var(--background);
+    --color-foreground: var(--foreground);
+    --font-title: var(--font-special-gothic-condensed);
+    --font-sans: var(--font-special-gothic);
 }
 
 @media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+    :root {
+        --background: #0a0a0a;
+        --foreground: #ededed;
+    }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+    background: var(--color-bg-b);
+    color: var(--foreground);
+    font-family: Arial, Helvetica, sans-serif;
 }
