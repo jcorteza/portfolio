@@ -10,7 +10,7 @@ const PROJECTS = '/projects';
 const CONTACT = '/contact';
 const FOOTER_PADDING = 'inline-block p-3';
 
-export default function LinkMenu({ isHeaderNav }: { isHeaderNav: boolean }) {
+export default function InternalLinkMenu({ isHeaderNav }: { isHeaderNav: boolean }) {
     const pathname = usePathname();
     return (
         <ul className={clsx(

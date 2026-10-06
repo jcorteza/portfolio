@@ -22,6 +22,7 @@ body::before {
     --color-brand-sage: #73ba9b;
     --color-brand-forest: #003e1f;
     --color-brand-ink: #01110a;
+    --color-ink-muted: #3d4f46;
     
     /* Accent */
     --color-accent: var(--color-brand-rust);

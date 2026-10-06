@@ -13,6 +13,10 @@ enum ThemeOption {
 const THEME_SETTING = 'theme';
 
 export default function ThemeSettings() {
+    if (typeof window === 'undefined') {
+        return null;
+    }
+
     const [themeState, setThemeState] = useState(localStorage.getItem(THEME_SETTING) || ThemeOption.DEFAULT);
     const isDefaultTheme = themeState === ThemeOption.DEFAULT;
     const isLightTheme = themeState === ThemeOption.LIGHT;

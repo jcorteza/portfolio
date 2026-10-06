@@ -1,0 +1,15 @@
+type Props = {
+    children: React.ReactNode;
+    heading: string;
+    description?: string;
+    required: boolean;
+}
+export default function LabeledField({ children, heading, description, required=false }: Props) {
+    return (
+        <label className="flex flex-col gap-1">
+            <div className="font-bold">{heading}{required && <span className="text-ink-muted font-normal">&nbsp;&#40;required&#41;</span>}</div>
+            {description && <div>{description}</div>}
+            {children}
+        </label>
+    )
+}
