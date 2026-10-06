@@ -28,11 +28,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       lang="en"
       className={`${specialGoth.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col gap-15 py-5">
-        <NavBar />
-        {children}
-        <hr aria-hidden className='mx-35' />
-        <Footer />
+      <body className="min-h-full min-w-0 flex justify-center items-stretch">
+        <div className="min-h-full min-w-0 flex flex-col gap-5 md:gap-15 w-5xl px-5 py-5">
+          <NavBar />
+          {children}
+          <hr aria-hidden />
+          <Footer />
+        </div>
       </body>
     </html>
   );

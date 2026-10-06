@@ -1,25 +1,34 @@
 import clsx from 'clsx';
-import { CARD_BASE, PAGE_PADDING_X, TEXT } from '../styles';
+import { CARD_BASE, TEXT } from '../styles';
 import ExternalLinkMenu from '../_components/ExternalLinkMenu';
 import ContactForm from './_components/ContactForm';
 
 export default function Contact() {
+    const ExternalLinks = (
+        <>
+            <h2 className={TEXT.cardSubtitle}>Prefer to skip the form?</h2>
+            <p>Lorem ipsum dolor sit amet.</p>
+            <ExternalLinkMenu isFooterMenu={false} />
+        </>
+    );
+
     return (
-        <main className={clsx(PAGE_PADDING_X)}>
-            <div className={clsx(CARD_BASE, 'grid grid-cols-2 gap-10 text-brand-ink')}>
-                <div className='flex flex-col justify-stretch gap-5'>
+        <main className="">
+            <div className={clsx(CARD_BASE, 'flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-10 text-brand-ink')}>
+                <div className='min-w-0 shrink flex flex-col justify-stretch gap-5'>
                     <div className='grow flex flex-col gap-3'>
-                        <h2 className={TEXT.cardTitle}>Contact</h2>
+                        <h1 className={TEXT.cardTitle}>Contact</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
                     </div>
-                    <hr />
-                    <div className='flex flex-col gap-3'>
-                        <h3 className={TEXT.cardSubtitle}>Prefer to skip the form?</h3>
-                        <p>Lorem ipsum dolor sit amet.</p>
-                        <ExternalLinkMenu isFooterMenu={false} />
+                    <hr aria-hidden />
+                    <div className='hidden min-w-0 shrink md:flex flex-col gap-3'>
+                        {ExternalLinks}
                     </div>
                 </div>
                 <ContactForm />
+                <div className='md:hidden min-w-0 shrink flex flex-col gap-3'>
+                    {ExternalLinks}
+                </div>
             </div>
         </main>
     )

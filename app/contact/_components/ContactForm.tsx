@@ -1,12 +1,12 @@
 import clsx from "clsx";
 import { FORM_INPUT } from "../../styles";
-import LabeledField from "./LabeledField";
-import TextInput from "./TextInput";
+import LabeledField from "../../../components/LabeledField";
+import TextInput from "../../../components/TextInput"
 import Button from "../../../components/Button";
 
 export default function ContactForm() {
     return (
-        <form className="flex flex-col gap-3">
+        <form className="min-w-0 shrink max-w-md flex flex-col gap-3">
             <LabeledField heading="Name" required>
                 <TextInput name="name" disabled={false} required invalid={false} />
             </LabeledField>

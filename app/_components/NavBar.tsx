@@ -1,13 +1,11 @@
 import EmblemLink from './EmblemLink';
-import { PAGE_PADDING_X } from '../styles';
-import clsx from 'clsx';
 import InternalLinkMenu from './InternalLinkMenu';
 
 export default function NavBar() {
     return (
-        <div className={clsx('w-full flex justify-between items-center', PAGE_PADDING_X)}>
+        <div className="w-full flex flex-col items-center md:flex-row md:justify-between md:items-center">
             <EmblemLink />
-            <nav>   
+            <nav className='w-full md:w-auto'>   
                 <InternalLinkMenu isHeaderNav={true} />
             </nav>
         </div>

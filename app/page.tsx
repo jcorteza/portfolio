@@ -1,11 +1,11 @@
 import clsx from "clsx";
 import HeroActions from "./_components/HeroActions";
-import { CARD_BASE, PAGE_PADDING_X, TEXT } from "./styles";
+import { CARD_BASE, TEXT } from "./styles";
 import ContactForm from "./contact/_components/ContactForm";
 
 export default function Home() {
     return (
-        <main className={clsx('relative grow flex flex-col justify-between gap-10', PAGE_PADDING_X)}>
+        <main className={clsx('relative grow flex flex-col justify-between gap-10')}>
             <div className={clsx(
                 'sticky inset-0 grow flex flex-col justify-end gap-5 h-[80svh]',
                 {

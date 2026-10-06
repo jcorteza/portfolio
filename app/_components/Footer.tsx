@@ -1,5 +1,3 @@
-import clsx from 'clsx';
-import { PAGE_PADDING_X } from '../styles';
 import EmblemLink from './EmblemLink';
 import InternalLinkMenu from './InternalLinkMenu';
 import ThemeSettings from './ThemeSettings';
@@ -7,8 +5,8 @@ import ExternalLinkMenu from './ExternalLinkMenu';
 
 export default function Footer() {
     return (
-        <div className={clsx(PAGE_PADDING_X, 'w-full')}>
-            <div className='w-full grid grid-cols-[40%_auto_auto]'>
+        <div className="w-full">
+            <div className='w-full flex flex-col gap-5 md:grid md:grid-cols-[40%_auto_auto]'>
                 <div className="flex flex-col gap-5">
                     <EmblemLink widthNHeight={64} />
                     <p>Build tools people want to use.</p>
@@ -23,7 +21,7 @@ export default function Footer() {
                     <ExternalLinkMenu isFooterMenu={true} />
                 </div>
             </div>
-            <small className='block font-bold mt-10'>&copy; 2026 Josephine Cortez-Ayala</small>
+            <small className='block font-bold mt-5 md:mt-10'>&copy; 2026 Josephine Cortez-Ayala</small>
         </div>
     );
 }

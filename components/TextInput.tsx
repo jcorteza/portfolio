@@ -1,6 +1,6 @@
 'use client'
 
-import { FORM_INPUT } from '../../styles';
+import { FORM_INPUT } from '../app/styles'
 
 type Props = {
     name: string;
