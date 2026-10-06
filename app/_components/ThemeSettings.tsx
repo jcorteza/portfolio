@@ -1,8 +1,8 @@
 'use client'
 
 import clsx from 'clsx';
-import { NAV_LINK_PADDING, NAV_COLORS_BASE, ACTIVE_INNER_SHADOW, THEME_BUTTON_STYLE } from '../styles';
-import { useState } from 'react';
+import { NAV_LINK_PADDING, NAV_COLORS_BASE, ACTIVE_INNER_SHADOW, THEME_BUTTON_STYLE } from '../../utils/styles';
+import { useEffect, useState } from 'react';
 
 enum ThemeOption {
     DEFAULT = 'default',
@@ -13,14 +13,17 @@ enum ThemeOption {
 const THEME_SETTING = 'theme';
 
 export default function ThemeSettings() {
-    if (typeof window === 'undefined') {
-        return null;
-    }
-
-    const [themeState, setThemeState] = useState(localStorage.getItem(THEME_SETTING) || ThemeOption.DEFAULT);
+    const [themeState, setThemeState] = useState(ThemeOption.DEFAULT);
     const isDefaultTheme = themeState === ThemeOption.DEFAULT;
     const isLightTheme = themeState === ThemeOption.LIGHT;
     const isDarkTheme = themeState === ThemeOption.DARK;
+
+    useEffect(() => {
+        const theme = localStorage.getItem(THEME_SETTING);
+        if (theme) {
+            setThemeState(theme as ThemeOption);
+        }
+    }, []);
 
     return(
         <div className="flex flex-col gap-1 font-bold">

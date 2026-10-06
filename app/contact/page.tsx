@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { CARD_BASE, TEXT } from '../styles';
+import { CARD_BASE, TEXT } from '../../utils/styles';
 import ExternalLinkMenu from '../_components/ExternalLinkMenu';
 import ContactForm from './_components/ContactForm';
 

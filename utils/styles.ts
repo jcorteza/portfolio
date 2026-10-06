@@ -1,5 +1,7 @@
 import clsx from "clsx";
 
+export const DECORATIVE_TAG = 'w-fit bg-brand-mint px-3 py-1 inline-block text-brand-forest font-bold uppercase text-sm font-[var(--font-title),_sans-serif] tracking-tight';
+
 export const HOVER_INNER_SHADOW = 'hover:shadow-[inset_0_0_0_1px_var(--color-brand-ink)]';
 export const ACTIVE_INNER_SHADOW = 'active:shadow-[inset_0_0_0_1px_var(--color-brand-ink)]';
 
@@ -10,6 +12,8 @@ export const NAV_LINK_PADDING = 'px-4 py-3 block';
 
 export const CARD_BASE = 'min-w-0 bg-white shadow-lg p-5 sm:p-10';
 export const CARD_EXTERNAL_LINK_MENU = 'text-accent hover:text-accent-hover active:text-accent-active hover:underline active:underline';
+
+export const PROJECT_SKILL_TAG = 'px-2 py-1 font-bold bg-brand-mint text-brand-forest text-sm font-[var(--font-title),_sans-serif]';
 
 export const FORM_INPUT = clsx('min-w-0 border border-brand-ink px-3 py-2', HOVER_INNER_SHADOW);
 

@@ -3,7 +3,7 @@ import Image from 'next/image';
 import emblem from '../jc-emblem-outline.png';
 import emblemNight from '../jc-emblem-outline-night.png';
 import clsx from 'clsx';
-import { ACTIVE_INNER_SHADOW, NAV_COLORS_BASE, NAV_COLORS_INACTIVE } from '../styles';
+import { ACTIVE_INNER_SHADOW, NAV_COLORS_BASE, NAV_COLORS_INACTIVE } from '../../utils/styles';
  
 export default function EmblemLink({  widthNHeight }: { widthNHeight?: number }) {
     return (

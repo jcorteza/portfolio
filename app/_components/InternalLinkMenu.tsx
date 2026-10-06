@@ -2,7 +2,7 @@
 
 import clsx from 'clsx';
 import Link from 'next/link';
-import { NAV_LINK_PADDING, NAV_COLORS_BASE, NAV_COLORS_ACTIVE, NAV_COLORS_INACTIVE, ACTIVE_INNER_SHADOW } from '../styles';
+import { NAV_LINK_PADDING, NAV_COLORS_BASE, NAV_COLORS_ACTIVE, NAV_COLORS_INACTIVE, ACTIVE_INNER_SHADOW } from '../../utils/styles';
 import { usePathname } from 'next/navigation';
 
 const HOME = '/';

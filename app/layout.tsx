@@ -15,6 +15,7 @@ import Footer from './_components/Footer';
 const specialGoth = Special_Gothic({
   variable: '--font-special-gothic',
   subsets: ['latin'],
+  fallback: ['Arial', 'Helvetica', 'sans-serif']
 });
 
 export const metadata: Metadata = {
@@ -29,7 +30,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       className={`${specialGoth.variable} h-full antialiased`}
     >
       <body className="min-h-full min-w-0 flex justify-center items-stretch">
-        <div className="min-h-full min-w-0 flex flex-col gap-5 md:gap-15 w-5xl px-5 py-5">
+        <div className="min-h-full min-w-0 flex flex-col gap-5 md:gap-10 w-5xl px-5 py-5">
           <NavBar />
           {children}
           <hr aria-hidden />

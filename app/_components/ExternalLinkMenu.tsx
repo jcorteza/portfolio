@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { NAV_COLORS_INACTIVE, NAV_COLORS_BASE, ACTIVE_INNER_SHADOW, CARD_EXTERNAL_LINK_MENU } from '../styles';
+import { NAV_COLORS_INACTIVE, NAV_COLORS_BASE, ACTIVE_INNER_SHADOW, CARD_EXTERNAL_LINK_MENU } from '../../utils/styles';
 
 export default function ExternalLinkMenu({ isFooterMenu }: { isFooterMenu: boolean }) {
     return (

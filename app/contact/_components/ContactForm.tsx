@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { FORM_INPUT } from "../../styles";
+import { FORM_INPUT } from "../../../utils/styles";
 import LabeledField from "../../../components/LabeledField";
 import TextInput from "../../../components/TextInput"
 import Button from "../../../components/Button";

@@ -1,7 +1,7 @@
 'use client'
 
 import clsx from 'clsx';
-import { ACTIVE_INNER_SHADOW } from '../app/styles';
+import { ACTIVE_INNER_SHADOW } from '../utils/styles';
 
 type Props = {
     isSubmit?: boolean;

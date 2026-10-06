@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import HeroActions from "./_components/HeroActions";
-import { CARD_BASE, TEXT } from "./styles";
+import { CARD_BASE, DECORATIVE_TAG, TEXT } from "../utils/styles";
 import ContactForm from "./contact/_components/ContactForm";
 
 export default function Home() {
@@ -12,8 +12,10 @@ export default function Home() {
                     'opacity-0': true
                 }
             )}>
-                <h1 className="w-fit bg-brand-mint px-3 py-1 inline-block text-brand-forest font-bold uppercase text-sm">Josephine Cortez-Ayala</h1>
-                <h2 className="text-brand-ink text-9xl uppercase tracking-tighter font-bold font-[var(--font-title),_sans-serif]">Full-Stack Software Engineer</h2>
+                <h1>
+                    <div className={DECORATIVE_TAG}>Josephine Cortez-Ayala</div>
+                    <div className="text-brand-ink text-9xl uppercase tracking-tighter font-bold font-[var(--font-title),_sans-serif]">Full-Stack Software Engineer</div>
+                </h1>
                 <p className="text-brank-ink text-lg w-1/3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                 <HeroActions />
             </div>
@@ -28,10 +30,10 @@ export default function Home() {
                     <div className="border w-md">where image would go</div>
                 </div>
                 <hr aria-hidden />
-                <form className="flex flex-col gap-3 text-brand-ink">
+                <div className="flex flex-col gap-3 text-brand-ink">
                     <h2 className={TEXT.cardTitle}>Contact</h2>
                     <ContactForm />
-                </form>
+                </div>
             </div>
         </main>
     );

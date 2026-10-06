@@ -1,0 +1,27 @@
+[
+    {
+        "projectUrl": "/projects/symptom-tracker-web-app",
+        "type": "Web App",
+        "title": "SymDay",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "imageUrl": "/images/symday.png",
+        "imageUrlSmall": "/images/symday2.png",
+        "imageAlt": "Screenshot of SymDay landing page",
+        "imageWidth": 1200,
+        "imageHeight": 1000,
+        "skills": ["TypeScript", "React", "Next.js"]
+    },
+    {
+        "projectUrl": "/projects/project-one",
+        "type": "Lorem Ipsum",
+        "title": "Lorem Ipsum",
+        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+        "imageUrl": "/images/symday.png",
+        "imageUrlSmall": "/images/symday2.png",
+        "imageAlt": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+        "imageWidth": 1200,
+        "imageHeight": 1000,
+        "skills": ["TypeScript", "React", "Next.js"],
+        "source": "https://github.com/jcorteza/symptom-tracker"
+    }
+]
