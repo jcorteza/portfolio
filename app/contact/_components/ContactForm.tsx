@@ -34,27 +34,28 @@ const Status = (status: MessageStatus, errors?: ErrorContext[]) => {
             className={clsx(
                 'flex border border-l-5 cursor-default',
                 {
-                    'gap-2 px-3 py-2 mb-5': status !== MessageStatus.NOT_APPLICABLE,
-                    'border-transparent': status === MessageStatus.NOT_APPLICABLE,
-                    'border-error': status === MessageStatus.ERROR,
+                    'gap-2 px-3 py-2 mb-5': status !== MessageStatus.NOT_APPLICABLE || errors,
+                    'border-transparent': status === MessageStatus.NOT_APPLICABLE && !errors,
+                    'border-error': status === MessageStatus.ERROR || errors,
                     'border-brand-ink': status === MessageStatus.PROCESSING,
                     'border-success': status === MessageStatus.SUCCESS
                 }
             )}>
             {
                 status === MessageStatus.SUCCESS ? <SuccessIcon /> :
-                    status === MessageStatus.ERROR ? <ErrorIcon /> :
+                    status === MessageStatus.ERROR || errors ? <ErrorIcon /> :
                         status === MessageStatus.PROCESSING ? <PauseIcon /> : null
             }
             <div>
                 <span className="font-bold text-brand-ink font-[var(--font-title),_sans-serif] tracking-tight">
                     {
                         status === MessageStatus.SUCCESS ? 'Message sent' :
-                            status === MessageStatus.ERROR && errors ? errorMessage :
-                                status === MessageStatus.PROCESSING ? 'Sending your message': ''
+                            status === MessageStatus.ERROR ? 'Something went wrong. Try again' :
+                                errors ? errorMessage :
+                                    status === MessageStatus.PROCESSING ? 'Sending your message': ''
                     }
                 </span>
-                {status === MessageStatus.ERROR && errors &&
+                {errors && errors.length > 0 &&
                     <ul className="flex flex-col gap-2 text-error">
                         {errors.map(({ error, fieldRef }, idx) => 
                             <li key={idx} className="hover:text-accent-hover active:text-accent-active">
@@ -128,7 +129,15 @@ export default function ContactForm() {
             }
         }
 
-        if (nameInvalid || emailInvalid || messageInvalid   ) {
+        if (nameInvalid) {
+            nameInput?.focus();
+        } else if (emailInvalid) {
+            emailInput?.focus();
+        } else if (messageInvalid) {
+            messageInput?.focus();
+        }
+
+        if (nameInvalid || emailInvalid || messageInvalid) {
             console.log('form invalid');
             return false;
         }
@@ -146,6 +155,7 @@ export default function ContactForm() {
                         return;
                     }
 
+                    startTransition(() => processForm(undefined));
                     if (isFormValid()) {
                         startTransition(() => {
                             processForm(new FormData(event.currentTarget))
