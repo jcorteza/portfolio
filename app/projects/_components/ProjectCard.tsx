@@ -1,7 +1,7 @@
 'use client'
 
 import clsx from 'clsx';
-import { CARD_BASE, DECORATIVE_TAG, PROJECT_SKILL_TAG, TEXT } from '../../../utils/styles';
+import { CARD_BASE, DECORATIVE_TAG, PROJECT_SKILL_TAG, TEXT } from '../../../lib/styles';
 import Image from 'next/image';
 import LinkButton from '../../../components/LinkButton';
 

@@ -1,7 +1,7 @@
 'use client'
 
 import clsx from 'clsx';
-import { ACTIVE_INNER_SHADOW } from '../utils/styles';
+import { ACTIVE_INNER_SHADOW, FOCUS } from '../lib/styles';
 import Link from 'next/link';
 
 type Props = {
@@ -15,6 +15,7 @@ type Props = {
 export default function LinkButton({ children, target, href, isSecondaryAction=false, isExternalLink=false }: Props) {
     const className = clsx(
         'w-fit cursor-pointer px-4 py-2 rounded-sm border border-brand-ink font-bold',
+        FOCUS,
         ACTIVE_INNER_SHADOW,
         {
             'bg-accent hover:bg-accent-hover active:bg-accent-hover text-white': !isSecondaryAction,

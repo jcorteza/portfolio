@@ -1,7 +1,7 @@
 'use client'
 
 import clsx from 'clsx';
-import { CARD_BASE, TEXT } from '../../utils/styles';
+import { CARD_BASE, TEXT } from '../../lib/styles';
 import ProjectFilter from './_components/ProjectsFilter';
 import projects from './projects.json';
 import ProjectCard, { Props as ProjectCardProps } from './_components/ProjectCard';

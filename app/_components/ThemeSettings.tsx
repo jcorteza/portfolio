@@ -1,7 +1,7 @@
 'use client'
 
 import clsx from 'clsx';
-import { NAV_LINK_PADDING, NAV_COLORS_BASE, ACTIVE_INNER_SHADOW, THEME_BUTTON_STYLE } from '../../utils/styles';
+import { NAV_LINK_PADDING, NAV_COLORS_BASE, ACTIVE_INNER_SHADOW, THEME_BUTTON_STYLE, FOCUS } from '../../lib/styles';
 import { useEffect, useState } from 'react';
 
 enum ThemeOption {
@@ -38,6 +38,7 @@ export default function ThemeSettings() {
                                 localStorage.setItem(THEME_SETTING, ThemeOption.DEFAULT);
                             }}
                             className={clsx(
+                                FOCUS,
                                 NAV_LINK_PADDING,
                                 NAV_COLORS_BASE,
                                 ACTIVE_INNER_SHADOW,
@@ -58,6 +59,7 @@ export default function ThemeSettings() {
                             localStorage.setItem(THEME_SETTING, ThemeOption.LIGHT);
                         }}
                         className={clsx(
+                            FOCUS,
                             NAV_LINK_PADDING,
                             NAV_COLORS_BASE,
                             ACTIVE_INNER_SHADOW,
@@ -78,6 +80,7 @@ export default function ThemeSettings() {
                             localStorage.setItem(THEME_SETTING, ThemeOption.DARK);
                         }}
                         className={clsx(
+                            FOCUS,
                             NAV_LINK_PADDING,
                             NAV_COLORS_BASE,
                             ACTIVE_INNER_SHADOW,

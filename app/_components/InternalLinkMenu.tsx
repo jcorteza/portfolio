@@ -2,7 +2,7 @@
 
 import clsx from 'clsx';
 import Link from 'next/link';
-import { NAV_LINK_PADDING, NAV_COLORS_BASE, NAV_COLORS_ACTIVE, NAV_COLORS_INACTIVE, ACTIVE_INNER_SHADOW } from '../../utils/styles';
+import { NAV_LINK_PADDING, NAV_COLORS_BASE, NAV_COLORS_ACTIVE, NAV_COLORS_INACTIVE, ACTIVE_INNER_SHADOW, FOCUS } from '../../lib/styles';
 import { usePathname } from 'next/navigation';
 
 const HOME = '/';
@@ -24,6 +24,7 @@ export default function InternalLinkMenu({ isHeaderNav }: { isHeaderNav: boolean
                 <Link
                     className={clsx(
                         isHeaderNav ? NAV_LINK_PADDING : FOOTER_PADDING,
+                        FOCUS,
                         NAV_COLORS_BASE,
                         ACTIVE_INNER_SHADOW,
                         pathname === HOME ? NAV_COLORS_ACTIVE : NAV_COLORS_INACTIVE,
@@ -40,6 +41,7 @@ export default function InternalLinkMenu({ isHeaderNav }: { isHeaderNav: boolean
                 <Link
                     className={clsx(
                         isHeaderNav ? NAV_LINK_PADDING : FOOTER_PADDING,
+                        FOCUS,
                         NAV_COLORS_BASE,
                         ACTIVE_INNER_SHADOW,
                         pathname === PROJECTS ? NAV_COLORS_ACTIVE : NAV_COLORS_INACTIVE,
@@ -55,6 +57,7 @@ export default function InternalLinkMenu({ isHeaderNav }: { isHeaderNav: boolean
                 <Link
                     className={clsx(
                         isHeaderNav ? NAV_LINK_PADDING : FOOTER_PADDING,
+                        FOCUS,
                         NAV_COLORS_BASE,
                         ACTIVE_INNER_SHADOW,
                         pathname === CONTACT ? NAV_COLORS_ACTIVE : NAV_COLORS_INACTIVE,

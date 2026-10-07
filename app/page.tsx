@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import HeroActions from "./_components/HeroActions";
-import { CARD_BASE, DECORATIVE_TAG, TEXT } from "../utils/styles";
+import { CARD_BASE, DECORATIVE_TAG, TEXT } from "../lib/styles";
 import ContactForm from "./contact/_components/ContactForm";
 
 export default function Home() {

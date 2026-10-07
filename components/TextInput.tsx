@@ -1,8 +1,10 @@
 'use client'
 
-import { FORM_INPUT } from '../utils/styles'
+import clsx from 'clsx';
+import { FOCUS, FORM_INPUT, HOVER_INNER_SHADOW } from '../lib/styles'
 
 type Props = {
+    ref: React.RefObject<HTMLInputElement | null>;
     name: string;
     disabled: boolean;
     describedBy?: string;
@@ -13,9 +15,20 @@ type Props = {
     onChangeAction?: React.ChangeEventHandler<HTMLInputElement, HTMLInputElement>
 }
 
-export default function TextInput({ name, disabled, describedBy, required=false, invalid=false, isForEmail=false, value, onChangeAction }: Props) {
+export default function TextInput({
+    ref,
+    name,
+    disabled,
+    describedBy,
+    required=false,
+    invalid=false,
+    isForEmail=false,
+    value,
+    onChangeAction
+}: Props) {
     return (
         <input
+            ref={ref}
             aria-describedby={describedBy}
             aria-invalid={invalid}
             required={required}
@@ -25,6 +38,13 @@ export default function TextInput({ name, disabled, describedBy, required=false,
             autoComplete={isForEmail ? 'email' : 'name'}
             readOnly={disabled}
             onChange={onChangeAction}
-            className={FORM_INPUT} />
+            className={clsx(
+                FORM_INPUT,
+                FOCUS,
+                {
+                    [HOVER_INNER_SHADOW]: !disabled,
+                    'cursor-default': disabled
+                }
+            )} />
     )
 }

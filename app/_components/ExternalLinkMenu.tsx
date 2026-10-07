@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { NAV_COLORS_INACTIVE, NAV_COLORS_BASE, ACTIVE_INNER_SHADOW, CARD_EXTERNAL_LINK_MENU } from '../../utils/styles';
+import { NAV_COLORS_INACTIVE, NAV_COLORS_BASE, ACTIVE_INNER_SHADOW, CARD_EXTERNAL_LINK_MENU, FOCUS } from '../../lib/styles';
 
 export default function ExternalLinkMenu({ isFooterMenu }: { isFooterMenu: boolean }) {
     return (
@@ -13,6 +13,7 @@ export default function ExternalLinkMenu({ isFooterMenu }: { isFooterMenu: boole
                 <a
                     className={clsx(
                         'inline-block',
+                        FOCUS,
                         {
                             'p-3 underline': isFooterMenu,
                             [NAV_COLORS_INACTIVE]: isFooterMenu,
@@ -30,6 +31,7 @@ export default function ExternalLinkMenu({ isFooterMenu }: { isFooterMenu: boole
                 <a
                     className={clsx(
                         'inline-block',
+                        FOCUS,
                         {
                             'p-3 underline': isFooterMenu,
                             [NAV_COLORS_INACTIVE]: isFooterMenu,
@@ -47,6 +49,7 @@ export default function ExternalLinkMenu({ isFooterMenu }: { isFooterMenu: boole
                 <a
                     className={clsx(
                         'inline-block',
+                        FOCUS,
                         {
                             'p-3 underline': isFooterMenu,
                             [NAV_COLORS_INACTIVE]: isFooterMenu,
