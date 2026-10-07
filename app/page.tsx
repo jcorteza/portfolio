@@ -7,19 +7,21 @@ export default function Home() {
     return (
         <main className={clsx('relative grow flex flex-col justify-between gap-10')}>
             <div className={clsx(
-                'sticky inset-0 grow flex flex-col justify-end gap-5 h-[80svh]',
+                'sticky top-[10svh] grow flex flex-col justify-end gap-5 h-[80svh]',
                 {
-                    'opacity-0': true
+                    'opacity-0': false
                 }
             )}>
-                <h1>
-                    <div className={DECORATIVE_TAG}>Josephine Cortez-Ayala</div>
-                    <div className="text-brand-ink text-9xl uppercase tracking-tighter font-bold font-[var(--font-title),_sans-serif]">Full-Stack Software Engineer</div>
-                </h1>
-                <p className="text-brank-ink text-lg w-1/3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                <HeroActions />
+                <div className="hero-fade">
+                    <h1>
+                        <div className={DECORATIVE_TAG}>Josephine Cortez-Ayala</div>
+                        <div className="text-brand-ink text-9xl uppercase tracking-tighter font-bold font-[var(--font-title),_sans-serif]">Full-Stack Software Engineer</div>
+                    </h1>
+                    <p className="text-brank-ink text-lg w-1/3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                    <HeroActions />
+                </div>
             </div>
-            <div className={clsx(CARD_BASE, 'flex flex-col gap-10')}>
+            <div className={clsx(CARD_BASE, 'relative z-10 flex flex-col gap-10')}>
                 <div className="w-full flex gap-5">
                     <div className="flex flex-col gap-3 text-brand-ink">
                         <h2 className={TEXT.cardTitle}>About</h2>

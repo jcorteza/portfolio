@@ -120,3 +120,20 @@ body {
     color: var(--foreground);
     font-family: Arial, Helvetica, sans-serif;
 }
+
+@keyframes hero-fade {
+  to {
+    opacity: 0;
+    transform: translateY(-2rem);
+  }
+}
+
+@utility hero-fade {
+  @media (prefers-reduced-motion: no-preference) {
+    @supports (animation-timeline: scroll()) {
+      animation: hero-fade linear both;
+      animation-timeline: scroll(root);
+      animation-range: 0 80svh;
+    }
+  }
+}
