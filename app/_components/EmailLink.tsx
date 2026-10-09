@@ -20,7 +20,7 @@ export default function EmailLink({ isFooterMenu }: { isFooterMenu?: boolean }) 
             )}
             onClick={(event) => {
                 event.preventDefault();
-                window.open('mailto:josephinecrtza+portfolio@gmail.com');
+                window.open('mailto:hello@jcortez.dev');
             }}>
             Email
         </a>
