@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import { NAV_COLORS_INACTIVE, NAV_COLORS_BASE, ACTIVE_INNER_SHADOW, CARD_EXTERNAL_LINK, FOCUS } from '../../lib/styles';
+import EmailLink from './EmailLink';
 
 export default function ExternalLinkMenu({ isFooterMenu }: { isFooterMenu: boolean }) {
     return (
@@ -48,23 +49,7 @@ export default function ExternalLinkMenu({ isFooterMenu }: { isFooterMenu: boole
                 </a>
             </li>
             <li>
-                <a
-                    className={clsx(
-                        'inline-block',
-                        FOCUS,
-                        {
-                            'p-3 underline': isFooterMenu,
-                            [NAV_COLORS_INACTIVE]: isFooterMenu,
-                            [NAV_COLORS_BASE]: isFooterMenu,
-                            [ACTIVE_INNER_SHADOW]: isFooterMenu,
-                            [CARD_EXTERNAL_LINK]: !isFooterMenu,
-                            'focus-visible:underline': !isFooterMenu
-                        }
-                    )}
-                    href='mailto:josephinecrtz@yahoo.com'
-                    target="_blank">
-                    Email
-                </a>
+                <EmailLink isFooterMenu={isFooterMenu} />
             </li>
         </ul>
     );
