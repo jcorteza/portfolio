@@ -1,6 +1,7 @@
 'use server'
 
-import { MessageStatus } from "./types";
+import { emailContactRequest } from './email';
+import { MessageStatus } from './types';
 
 export const processContactRequest = async (initialState: MessageStatus, form?: FormData) => {
     if (!form) {
@@ -28,6 +29,7 @@ export const processContactRequest = async (initialState: MessageStatus, form?: 
             throw new Error('Missing contact form fields.');
         }
 
+        await emailContactRequest(name, email, message);
         return MessageStatus.SUCCESS;
     } catch (error) {
         console.error('Unexpected error processing contact form', error);
