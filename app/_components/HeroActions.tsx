@@ -6,7 +6,7 @@ import Button from "../../components/Button";
 export default function HeroActions() {
     const router = useRouter();
     return (
-        <div className="flex gap-5">
+        <div className="flex flex-col md:flex-row gap-2">
             <Button handleClickAction={() => router.push('/projects')}>See my projects</Button>
             <Button handleClickAction={() => router.push('/contact')} isSecondaryAction>Get in touch</Button>
         </div>

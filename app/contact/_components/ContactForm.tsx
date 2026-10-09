@@ -64,7 +64,7 @@ const Status = (status: MessageStatus, errors: ErrorContext[]) => {
             )}>
             {icon}
             <div className="flex flex-col gap-2">
-                <span className="font-bold text-brand-ink font-[var(--font-title),_sans-serif] tracking-tight">
+                <span className="font-bold text-brand-ink font-title tracking-tight">
                     {headingText}
                 </span>
                 {errors.length > 0 &&

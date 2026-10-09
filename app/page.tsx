@@ -6,13 +6,13 @@ import ContactForm from "./contact/_components/ContactForm";
 export default function Home() {
     return (
         <main className="relative grow flex flex-col justify-between gap-10">
-            <div className="sticky top-[10svh] grow flex flex-col justify-end h-[80svh]">
-                <div className="hero-fade flex flex-col gap-5">
-                    <h1>
+            <div className="sticky top-[17svh] md:top-[12svh] grow flex flex-col justify-end h-[62svh] md:h-[75svh]">
+                <div className="hero-fade flex flex-col gap-3 md:gap-5">
+                    <h1 className="flex flex-col gap-3 md:gap-5">
                         <div className={DECORATIVE_TAG}>Josephine Cortez-Ayala</div>
-                        <div className="text-brand-ink text-9xl uppercase tracking-tighter font-bold font-[var(--font-title),_sans-serif]">Full-Stack Software Engineer</div>
+                        <div className="text-brand-ink text-7xl sm:text-8xl md:text-[8.5rem] uppercase leading-none font-title">Full-Stack Software Engineer</div>
                     </h1>
-                    <p className="text-brank-ink text-lg w-1/3">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
+                    <p className="text-brank-ink text-lg w-full md:w-1/2">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
                     <HeroActions />
                 </div>
             </div>

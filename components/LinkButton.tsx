@@ -14,7 +14,7 @@ type Props = {
 
 export default function LinkButton({ children, target, href, isSecondaryAction=false, isExternalLink=false }: Props) {
     const className = clsx(
-        'w-fit cursor-pointer px-4 py-2 rounded-sm border border-brand-ink font-bold',
+        'w-full md:w-fit text-center cursor-pointer px-4 py-2 rounded-sm border border-brand-ink font-bold',
         FOCUS,
         ACTIVE_INNER_SHADOW,
         {

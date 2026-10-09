@@ -5,6 +5,7 @@ import NavBar from './_components/NavBar';
 import StatusCard from './_components/StatusCard';
 import { Metadata } from 'next';
 import './globals.css';
+import { specialGoth, specialGothCond } from '../lib/styles';
 
 export const metadata: Metadata = {
   title: 'Site Error',
@@ -19,7 +20,10 @@ export default function GlobalError({
     retry: () => void;
 }) {
     return (
-        <html>
+        <html
+            lang="en"
+            className={`${specialGoth.variable} ${specialGothCond.variable} h-full antialiased`}
+        >
             <body className="min-h-full min-w-0 flex justify-center items-stretch">
                 <div className="min-h-full min-w-0 flex flex-col gap-5 md:gap-10 w-5xl px-5 py-5">
                     <NavBar/>

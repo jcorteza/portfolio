@@ -14,7 +14,7 @@ export default function InternalLinkMenu({ isHeaderNav }: { isHeaderNav: boolean
     const pathname = usePathname();
     return (
         <ul className={clsx(
-            'flex justify-between md:justify-normal text-brand-ink font-bold tracking-tight w-full md:w-auto',
+            'flex justify-between md:justify-normal text-brand-ink font-bold w-full md:w-auto',
             {
                 'gap-1 flex-col': !isHeaderNav,
                 'md:gap-5': isHeaderNav
