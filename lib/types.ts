@@ -2,5 +2,6 @@ export enum MessageStatus {
     NOT_APPLICABLE,
     PROCESSING,
     ERROR,
-    SUCCESS
+    SUCCESS,
+    POSSIBLE_SPAM
 }

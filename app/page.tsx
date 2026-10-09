@@ -5,14 +5,9 @@ import ContactForm from "./contact/_components/ContactForm";
 
 export default function Home() {
     return (
-        <main className={clsx('relative grow flex flex-col justify-between gap-10')}>
-            <div className={clsx(
-                'sticky top-[10svh] grow flex flex-col justify-end gap-5 h-[80svh]',
-                {
-                    'opacity-0': false
-                }
-            )}>
-                <div className="hero-fade">
+        <main className="relative grow flex flex-col justify-between gap-10">
+            <div className="sticky top-[10svh] grow flex flex-col justify-end h-[80svh]">
+                <div className="hero-fade flex flex-col gap-5">
                     <h1>
                         <div className={DECORATIVE_TAG}>Josephine Cortez-Ayala</div>
                         <div className="text-brand-ink text-9xl uppercase tracking-tighter font-bold font-[var(--font-title),_sans-serif]">Full-Stack Software Engineer</div>

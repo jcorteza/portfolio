@@ -4,7 +4,7 @@ import clsx from 'clsx';
 import { FOCUS, FORM_INPUT, HOVER_INNER_SHADOW } from '../lib/styles'
 
 type Props = {
-    ref: React.RefObject<HTMLInputElement | null>;
+    ref?: React.RefObject<HTMLInputElement | null>;
     name: string;
     disabled: boolean;
     describedBy?: string;
@@ -12,6 +12,7 @@ type Props = {
     invalid?: boolean;
     isForEmail?: boolean;
     value?: string;
+    isHoneyPot?: boolean;
     onChangeAction?: React.ChangeEventHandler<HTMLInputElement, HTMLInputElement>
 }
 
@@ -23,6 +24,7 @@ export default function TextInput({
     required=false,
     invalid=false,
     isForEmail=false,
+    isHoneyPot=false,
     value,
     onChangeAction
 }: Props) {
@@ -31,11 +33,13 @@ export default function TextInput({
             ref={ref}
             aria-describedby={describedBy}
             aria-invalid={invalid}
+            aria-hidden={isHoneyPot ? true : undefined}
             required={required}
+            tabIndex={isHoneyPot ? -1 : undefined}
             value={value}
             name={name}
             type={isForEmail ? 'email' : 'text'}
-            autoComplete={isForEmail ? 'email' : 'name'}
+            autoComplete={isHoneyPot ? 'off' : isForEmail ? 'email' : 'name'}
             readOnly={disabled}
             onChange={onChangeAction}
             className={clsx(

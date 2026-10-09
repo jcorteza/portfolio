@@ -19,7 +19,8 @@ export default function ExternalLinkMenu({ isFooterMenu }: { isFooterMenu: boole
                             [NAV_COLORS_INACTIVE]: isFooterMenu,
                             [NAV_COLORS_BASE]: isFooterMenu,
                             [ACTIVE_INNER_SHADOW]: isFooterMenu,
-                            [CARD_EXTERNAL_LINK_MENU]: !isFooterMenu
+                            [CARD_EXTERNAL_LINK_MENU]: !isFooterMenu,
+                            'focus-visible:underline': !isFooterMenu
                         }
                     )}
                     href='https://github.com/jcorteza'
@@ -37,7 +38,8 @@ export default function ExternalLinkMenu({ isFooterMenu }: { isFooterMenu: boole
                             [NAV_COLORS_INACTIVE]: isFooterMenu,
                             [NAV_COLORS_BASE]: isFooterMenu,
                             [ACTIVE_INNER_SHADOW]: isFooterMenu,
-                            [CARD_EXTERNAL_LINK_MENU]: !isFooterMenu
+                            [CARD_EXTERNAL_LINK_MENU]: !isFooterMenu,
+                            'focus-visible:underline': !isFooterMenu
                         }
                     )}
                     href='https://www.linkedin.com/in/josephine-cortez-ayala/'
@@ -55,7 +57,8 @@ export default function ExternalLinkMenu({ isFooterMenu }: { isFooterMenu: boole
                             [NAV_COLORS_INACTIVE]: isFooterMenu,
                             [NAV_COLORS_BASE]: isFooterMenu,
                             [ACTIVE_INNER_SHADOW]: isFooterMenu,
-                            [CARD_EXTERNAL_LINK_MENU]: !isFooterMenu
+                            [CARD_EXTERNAL_LINK_MENU]: !isFooterMenu,
+                            'focus-visible:underline': !isFooterMenu
                         }
                     )}
                     href='mailto:josephinecrtz@yahoo.com'

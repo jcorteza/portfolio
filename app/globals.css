@@ -137,3 +137,13 @@ body {
     }
   }
 }
+
+#urlField {
+  position: absolute;
+  left: -9999;
+  z-index: -999;
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  pointer-events: none;
+}

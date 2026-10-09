@@ -1,4 +1,4 @@
-export const FOCUS = 'focus:outline-none focus:outline-3 focus:outline-brand-ink focus:outline-offset-3 focus-visible:outline-3 focus-visible:outline-brand-ink focus-visible:outline-offset-3';
+export const FOCUS = 'focus:outline-none focus-visible:outline-3 focus-visible:outline-brand-ink focus-visible:outline-offset-3';
 
 export const DECORATIVE_TAG = 'w-fit bg-brand-mint px-3 py-1 inline-block text-brand-forest font-bold uppercase text-sm font-[var(--font-title),_sans-serif] tracking-tight';
 
