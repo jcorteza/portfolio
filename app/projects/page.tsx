@@ -6,6 +6,7 @@ import ProjectFilter from './_components/ProjectsFilter';
 import projects from './projects.json';
 import ProjectCard, { Props as ProjectCardProps } from './_components/ProjectCard';
 import { useState } from 'react';
+import { filterHasMatch } from '../../lib/utils';
 
 export default function ProjectsPage() {
     const [activeFilters, setActiveFilters] = useState<Set<string>>(new Set());
@@ -21,15 +22,7 @@ export default function ProjectsPage() {
                 <ProjectFilter filterOptions={new Set(projects.flatMap(({ skills }) => skills))} filters={activeFilters} setFiltersAction={setActiveFilters} />
             </div>
             {projects
-                .filter(project => activeFilters.values().every(filter => {
-                    const value = filter.trim().toLowerCase();
-                    const isFullNameListed = project.skills.some(skill => {
-                        const normalizedSkill = skill.toLowerCase();
-                        return normalizedSkill === value || normalizedSkill.replace('.', '') === value;
-                    });
-                    const isPartialInList = project.skills.some(skill => skill.toLowerCase().startsWith(value));
-                    return isFullNameListed || isPartialInList;
-                }))
+                .filter(project => activeFilters.values().every((filter) => filterHasMatch(filter, project.skills)))
                 .map((attributes, idx) =>
                     <ProjectCard
                         key={idx}
