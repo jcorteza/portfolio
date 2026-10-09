@@ -14,7 +14,7 @@ export default function ErrorCard({ retryAction, status }: Props) {
     const router = useRouter();
 
     const title = status === 500 ? 'Something went wrong' : status === 404 ? 'Page not found' : '';
-    const explanation = status === 500 ? 'The problem is on my end. Try again.' : status === 404 ? 'The link may be old, or I may have typed it wrong.': '';
+    const explanation = status === 500 ? 'The problem is on my end.' : status === 404 ? 'You\'ve found a page I haven\'t built yet.': '';
     const tellMeAboutIt = status === 500 ? 'Retried but still won\'t work?' : status === 404 ? 'Followed a broken link?' : '';
 
     const handleUrlChange = (url: string) => {
