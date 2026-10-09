@@ -29,7 +29,7 @@ export default function ThemeSettings() {
     return(
         <div className="flex flex-col gap-1">
             <div className="text-sm uppercase font-bold">Theme</div>
-            <ul className="w-fit inline-flex border border-brand-ink rounded-sm tracking-tight not-last">
+            <ul className="w-fit inline-flex border border-brand-ink tracking-tight not-last">
                 <li className="border-r border-brand-ink">
                     <ActionButton
                         isActive={isDefaultTheme}
