@@ -10,6 +10,7 @@ export const processContactRequest = async (initialState: MessageStatus, form?: 
     const isResubmitting = initialState === MessageStatus.POSSIBLE_SPAM;
     const formLoadToSubmit = form.get('loadToSubmitTime')?.valueOf();
     if (!isResubmitting && (form.get('url') || !formLoadToSubmit)) {
+        console.debug('Spam received');
         return MessageStatus.SUCCESS;
     }
 

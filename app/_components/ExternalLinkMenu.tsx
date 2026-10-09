@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { NAV_COLORS_INACTIVE, NAV_COLORS_BASE, ACTIVE_INNER_SHADOW, CARD_EXTERNAL_LINK_MENU, FOCUS } from '../../lib/styles';
+import { NAV_COLORS_INACTIVE, NAV_COLORS_BASE, ACTIVE_INNER_SHADOW, CARD_EXTERNAL_LINK, FOCUS } from '../../lib/styles';
 
 export default function ExternalLinkMenu({ isFooterMenu }: { isFooterMenu: boolean }) {
     return (
@@ -19,7 +19,7 @@ export default function ExternalLinkMenu({ isFooterMenu }: { isFooterMenu: boole
                             [NAV_COLORS_INACTIVE]: isFooterMenu,
                             [NAV_COLORS_BASE]: isFooterMenu,
                             [ACTIVE_INNER_SHADOW]: isFooterMenu,
-                            [CARD_EXTERNAL_LINK_MENU]: !isFooterMenu,
+                            [CARD_EXTERNAL_LINK]: !isFooterMenu,
                             'focus-visible:underline': !isFooterMenu
                         }
                     )}
@@ -38,7 +38,7 @@ export default function ExternalLinkMenu({ isFooterMenu }: { isFooterMenu: boole
                             [NAV_COLORS_INACTIVE]: isFooterMenu,
                             [NAV_COLORS_BASE]: isFooterMenu,
                             [ACTIVE_INNER_SHADOW]: isFooterMenu,
-                            [CARD_EXTERNAL_LINK_MENU]: !isFooterMenu,
+                            [CARD_EXTERNAL_LINK]: !isFooterMenu,
                             'focus-visible:underline': !isFooterMenu
                         }
                     )}
@@ -57,7 +57,7 @@ export default function ExternalLinkMenu({ isFooterMenu }: { isFooterMenu: boole
                             [NAV_COLORS_INACTIVE]: isFooterMenu,
                             [NAV_COLORS_BASE]: isFooterMenu,
                             [ACTIVE_INNER_SHADOW]: isFooterMenu,
-                            [CARD_EXTERNAL_LINK_MENU]: !isFooterMenu,
+                            [CARD_EXTERNAL_LINK]: !isFooterMenu,
                             'focus-visible:underline': !isFooterMenu
                         }
                     )}

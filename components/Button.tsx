@@ -16,7 +16,7 @@ export default function Button({ children, handleClickAction, isSubmit=false, is
         <button
             type={isSubmit ? 'submit' : 'button'}
             className={clsx(
-                'w-fit px-4 py-2 rounded-sm border font-bold',
+                'shrink-0 w-fit px-4 py-2 rounded-sm border font-bold',
                 FOCUS,
                 ACTIVE_INNER_SHADOW,
                 {
