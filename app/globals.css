@@ -27,6 +27,11 @@
     --bg-c: #f5d3c4;
     --bg-glow: #ffb09ab3;
     --page-gradient: linear-gradient(165deg, var(--bg-a) 0%, var(--bg-b) 52%, var(--bg-c) 100%);
+    --shadow-card:0 32px 80px -24px #01110a40, 0 10px 28px -10px #01110a1f;
+    --shadow-card-raised:0 48px 96px -24px #01110a59, 0 18px 40px -12px #01110a33;
+    --shadow-button:0 12px 24px -12px #01110a59;
+    --focus-width:3px;--focus-offset:3px;
+    --surface-card:var(--surface);
     color-scheme: light;
 }
 
@@ -51,14 +56,14 @@ html.dark {
     --bg-b: var(--brand-forest);
     --bg-c: #2b0f08;
     --bg-glow: #ba2d0b66;
-    --shadow-card: 0 32px 80px -20px #000000a6, 0 10px 28px -10px #00000066;
-    --shadow-card-raised: 0 48px 96px -20px #000000cc, 0 18px 40px -12px #00000080;
-    --shadow-button: 0 12px 24px -12px #000000b3;
+    --shadow-card:0 0 40px -8px #73ba9b40, 0 0 12px -4px #73ba9b26;
+    --shadow-card-raised:0 0 64px -8px #73ba9b59, 0 0 20px -4px #73ba9b40;
+    --shadow-button:0 0 20px -6px #ff8a6b66;
     color-scheme: dark;
 }
 
 @media (prefers-color-scheme: dark) {
-    [data-theme="system"] {
+    html:not(.dark):not(.light) {
         --ink: var(--brand-mint);
         --ink-muted: #a9c9b8;
         --surface: #06170f;
@@ -78,9 +83,9 @@ html.dark {
         --bg-b: var(--brand-forest);
         --bg-c: #2b0f08;
         --bg-glow: #ba2d0b66;
-        --shadow-card: 0 32px 80px -20px #000000a6, 0 10px 28px -10px #00000066;
-        --shadow-card-raised: 0 48px 96px -20px #000000cc, 0 18px 40px -12px #00000080;
-        --shadow-button: 0 12px 24px -12px #000000b3;
+        --shadow-card:0 0 40px -8px #73ba9b40, 0 0 12px -4px #73ba9b26;
+        --shadow-card-raised:0 0 64px -8px #73ba9b59, 0 0 20px -4px #73ba9b40;
+        --shadow-button:0 0 20px -6px #ff8a6b66;
         color-scheme: dark;
     }
 }
@@ -138,23 +143,6 @@ body::before {
 body {
     background: var(--bg-b);
     color: var(--ink);
-}
-
-@keyframes hero-fade {
-    to {
-        opacity: 0;
-        transform: translateY(-2rem);
-    }
-}
-
-@utility hero-fade {
-    @media (prefers-reduced-motion: no-preference) {
-        @supports (animation-timeline: scroll()) {
-            animation: hero-fade linear both;
-            animation-timeline: scroll(root);
-            animation-range: 0 80svh;
-        }
-    }
 }
 
 #urlField {

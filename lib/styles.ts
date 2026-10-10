@@ -17,15 +17,15 @@ export const FOCUS = 'focus:outline-none focus-visible:outline-3 focus-visible:o
 
 export const DECORATIVE_TAG = 'w-fit bg-tag-bg px-3 py-1 inline-block text-tag-ink font-bold uppercase text-sm font-subtitle tracking-wide';
 
-export const HOVER_INNER_SHADOW = 'hover:shadow-[inset_0_0_0_1px_var(--color-card-edge)]';
-export const ACTIVE_INNER_SHADOW = 'active:shadow-[inset_0_0_0_1px_var(--color-card-edge)]';
+export const HOVER_INNER_SHADOW = 'hover:shadow-(--shadow-button)';
+export const ACTIVE_INNER_SHADOW = 'active:shadow-(--shadow-button)';
 
 export const NAV_COLORS_BASE = 'hover:bg-tag-bg active:bg-press-bg border';
 export const NAV_COLORS_ACTIVE = 'bg-surface border-card-edge';
 export const NAV_COLORS_INACTIVE = 'cursor-pointer border-transparent hover:border-card-edge active:border-card-edge';
 export const NAV_LINK_PADDING = 'px-4 py-3 block';
 
-export const CARD_BASE = 'min-w-0 bg-surface shadow-lg p-5 sm:p-10';
+export const CARD_BASE = 'min-w-0 bg-surface shadow-(--shadow-card) p-5 sm:p-10';
 export const CARD_EXTERNAL_LINK = 'text-accent hover:text-accent-hover active:text-accent-active hover:underline active:underline';
 
 export const PROJECT_SKILL_TAG = 'px-2 py-1 font-bold bg-tag-bg text-tag-ink text-sm font-title';
@@ -39,5 +39,5 @@ export const TEXT = {
 
 export const THEME_BUTTON_STYLE = {
     active: 'cursor-default pointer-events-none bg-body-text text-surface',
-    inactive: 'cursor-pointer bg-surface ext-body-text'
+    inactive: 'cursor-pointer bg-surface text-body-text'
 };
