@@ -24,7 +24,7 @@ export default function ErrorCard({ retryAction, status }: Props) {
  
     return (
         <main className={clsx(CARD_BASE, 'flex flex-col sm:flex-row sm:justify-between sm:items-end')}>
-            <div className='md:max-w-1/2 flex flex-col gap-4 text-brand-ink'>
+            <div className='md:max-w-1/2 flex flex-col gap-4 text-body-text'>
                 <h1 className='w-fit inline-block font-bold uppercase text-sm font-subtitle tracking-wide'>{`Error ${status}`}</h1>
                 <p className="shrink-0 textwrap-none uppercase font-title text-7xl">{title}</p>
                 <p>{explanation}</p>

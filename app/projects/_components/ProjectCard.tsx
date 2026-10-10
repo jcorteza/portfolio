@@ -39,7 +39,7 @@ export default function ProjectCard({
                     <div className={DECORATIVE_TAG}>{type}</div>
                     <div className={TEXT.cardSubtitle}>{title}</div>
                 </h2>
-                <p className="text-brand-ink">{description}</p>
+                <p className="text-body-text">{description}</p>
                 <ul className="flex flex-wrap gap-2">
                     {skills.map((skill, idx) => <li key={idx} className={PROJECT_SKILL_TAG}>{skill}</li>)}
                 </ul>

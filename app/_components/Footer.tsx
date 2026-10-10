@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="w-full">
             <div className='w-full flex flex-col gap-5 md:grid md:grid-cols-[40%_auto_auto]'>
                 <div className="flex flex-col gap-5">
-                    <EmblemLink widthNHeight={64} />
+                    <EmblemLink isForFooter />
                     <p>Build tools people want to use.</p>
                     <ThemeSettings />
                 </div>

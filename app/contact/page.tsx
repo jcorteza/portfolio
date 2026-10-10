@@ -14,7 +14,7 @@ export default function Contact() {
 
     return (
         <main className="">
-            <div className={clsx(CARD_BASE, 'flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-10 text-brand-ink')}>
+            <div className={clsx(CARD_BASE, 'flex flex-col gap-5 md:grid md:grid-cols-2 md:gap-10 text-body-text')}>
                 <div className='min-w-0 shrink flex flex-col justify-stretch gap-5'>
                     <div className='grow flex flex-col gap-3'>
                         <h1 className={TEXT.cardTitle}>Contact</h1>

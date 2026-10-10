@@ -14,12 +14,12 @@ type Props = {
 
 export default function LinkButton({ children, target, href, isSecondaryAction=false, isExternalLink=false }: Props) {
     const className = clsx(
-        'w-full md:w-fit text-center cursor-pointer px-4 py-2 rounded-sm border border-brand-ink font-bold',
+        'w-full md:w-fit text-center cursor-pointer px-4 py-2 rounded-sm border border-card-edge font-bold',
         FOCUS,
         ACTIVE_INNER_SHADOW,
         {
-            'bg-accent hover:bg-accent-hover active:bg-accent-hover text-white': !isSecondaryAction,
-            'bg-white hover:bg-brand-mint active:bg-brand-sage text-brand-ink': isSecondaryAction
+            'bg-accent hover:bg-accent-hover active:bg-accent-hover text-surface': !isSecondaryAction,
+            'bg-surface hover:bg-tag-bg active:bg-brand-sage text-body-text': isSecondaryAction
         }
     );
 

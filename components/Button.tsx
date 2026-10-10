@@ -20,12 +20,12 @@ export default function Button({ children, handleClickAction, isSubmit=false, is
                 FOCUS,
                 ACTIVE_INNER_SHADOW,
                 {
-                    'bg-accent hover:bg-accent-hover active:bg-accent-hover text-white': !isSecondaryAction && !isDisabled,
-                    'bg-white hover:bg-brand-mint active:bg-brand-sage text-brand-ink': isSecondaryAction && !isDisabled,
-                    'bg-accent/50 text-white': !isSecondaryAction && isDisabled,
-                    'bg-white text-brand-ink/50': isSecondaryAction && isDisabled,
-                    'border-brand-ink cursor-pointer': !isDisabled,
-                    'border-brand-ink/50': isDisabled
+                    'bg-accent hover:bg-accent-hover active:bg-accent-hover text-surface': !isSecondaryAction && !isDisabled,
+                    'bg-surface hover:bg-tag-bg active:bg-brand-sage text-body-text': isSecondaryAction && !isDisabled,
+                    'bg-accent/50 text-surface': !isSecondaryAction && isDisabled,
+                    'bg-surface text-body-text/50': isSecondaryAction && isDisabled,
+                    'border-card-edge cursor-pointer': !isDisabled,
+                    'border-card-edge/50': isDisabled
                 }
             )}
             onClick={handleClickAction}>

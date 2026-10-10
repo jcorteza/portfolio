@@ -22,9 +22,9 @@ export default function ActionButton({ isActive, isInline, disableActive, handle
                 NAV_LINK_PADDING,
                 ACTIVE_INNER_SHADOW,
                 {
-                    'bg-white hover:bg-brand-mint active:bg-brand-sage text-brand-ink': !isActive,
-                    'bg-brand-ink text-white': isActive,
-                    'border border-brand-ink rounded-sm ': !isInline
+                    'bg-surface hover:bg-tag-bg active:bg-brand-sage text-body-text': !isActive,
+                    'bg-body-text text-surface': isActive,
+                    'border border-card-edge rounded-sm ': !isInline
                 }
             )}
             onClick={handleClickAction}>

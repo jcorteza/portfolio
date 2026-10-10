@@ -66,13 +66,13 @@ const Status = (status: MessageStatus, errors: ErrorContext[]) => {
                     'gap-2 px-3 py-2 mb-5': status !== MessageStatus.NOT_APPLICABLE || errors.length > 0,
                     'border-transparent': status === MessageStatus.NOT_APPLICABLE && errors.length === 0,
                     'border-error': isErrorState,
-                    'border-brand-ink': status === MessageStatus.PROCESSING,
+                    'border-card-edge': status === MessageStatus.PROCESSING,
                     'border-success': status === MessageStatus.SUCCESS
                 }
             )}>
             {icon}
             <div className="flex flex-col gap-2">
-                <span className="font-bold text-brand-ink font-title">
+                <span className="font-bold text-body-text font-title">
                     {heading}
                 </span>
                 {errors.length > 0 &&

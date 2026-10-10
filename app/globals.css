@@ -1,18 +1,98 @@
 @import 'tailwindcss';
 
 :root {
-    --background: #ffffff;
-    --foreground: #171717;
+    --brand-rust: #ba2d0b;
+    --brand-mint: #d5f2e3;
+    --brand-sage: #73ba9b;
+    --brand-forest: #003e1f;
+    --brand-ink: #01110a;
+    --ink: var(--brand-ink);
+    --ink-muted: #3d4f46;
+    --surface: #ffffff;
+    --card-edge: var(--brand-ink);
+    --card-line: #01110a1f;
+    --accent: var(--brand-rust);
+    --accent-hover: #8f2108;
+    --accent-active: #6b1805;
+    --on-accent: #ffffff;
+    --focus-ring: var(--brand-forest);
+    --error: #9b1c31;
+    --success: #0a6a35;
+    --tag-bg: var(--brand-mint);
+    --tag-ink: var(--brand-forest);
+    --press-bg: #a6d8c0;
+    --emblem-highlight: var(--surface);
+    --bg-a: var(--brand-mint);
+    --bg-b: var(--brand-sage);
+    --bg-c: #f5d3c4;
+    --bg-glow: #ffb09ab3;
+    --page-gradient: linear-gradient(165deg, var(--bg-a) 0%, var(--bg-b) 52%, var(--bg-c) 100%);
+    color-scheme: light;
+}
+
+html.dark {
+    --ink: var(--brand-mint);
+    --ink-muted: #a9c9b8;
+    --surface: #06170f;
+    --card-edge: var(--brand-sage);
+    --card-line: #73ba9b59;
+    --accent: #ff8a6b;
+    --accent-hover: #ffb09b;
+    --accent-active: #ffe3da;
+    --on-accent: var(--brand-ink);
+    --focus-ring: var(--brand-mint);
+    --error: #ff9aa8;
+    --success: #7fdca6;
+    --tag-bg: var(--brand-forest);
+    --tag-ink: var(--brand-mint);
+    --press-bg: #0a5a2f;
+    --emblem-highlight: var(--brand-ink);
+    --bg-a: var(--brand-ink);
+    --bg-b: var(--brand-forest);
+    --bg-c: #2b0f08;
+    --bg-glow: #ba2d0b66;
+    --shadow-card: 0 32px 80px -20px #000000a6, 0 10px 28px -10px #00000066;
+    --shadow-card-raised: 0 48px 96px -20px #000000cc, 0 18px 40px -12px #00000080;
+    --shadow-button: 0 12px 24px -12px #000000b3;
+    color-scheme: dark;
+}
+
+@media (prefers-color-scheme: dark) {
+    [data-theme="system"] {
+        --ink: var(--brand-mint);
+        --ink-muted: #a9c9b8;
+        --surface: #06170f;
+        --card-edge: var(--brand-sage);
+        --card-line: #73ba9b59;
+        --accent: #ff8a6b;
+        --accent-hover: #ffb09b;
+        --accent-active: #ffe3da;
+        --on-accent: var(--brand-ink);
+        --focus-ring: var(--brand-mint);
+        --error: #ff9aa8;
+        --success: #7fdca6;
+        --tag-bg: var(--brand-forest);
+        --tag-ink: var(--brand-mint);
+        --press-bg: #0a5a2f;
+        --bg-a: var(--brand-ink);
+        --bg-b: var(--brand-forest);
+        --bg-c: #2b0f08;
+        --bg-glow: #ba2d0b66;
+        --shadow-card: 0 32px 80px -20px #000000a6, 0 10px 28px -10px #00000066;
+        --shadow-card-raised: 0 48px 96px -20px #000000cc, 0 18px 40px -12px #00000080;
+        --shadow-button: 0 12px 24px -12px #000000b3;
+        color-scheme: dark;
+    }
 }
 
 body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -1;
-  background:
-    radial-gradient(50% 40% at 80% 15%, var(--color-bg-glow), transparent 70%),
-    var(--page-gradient);
+    content: "";
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background:
+        radial-gradient(50% 40% at 80% 15%, var(--bg-glow), transparent 70%),
+        var(--page-gradient);
 }
 
 @theme {
@@ -22,127 +102,67 @@ body::before {
     --color-brand-sage: #73ba9b;
     --color-brand-forest: #003e1f;
     --color-brand-ink: #01110a;
-    --color-ink-muted: #3d4f46;
-    
-    /* Accent */
-    --color-accent: var(--color-brand-rust);
-    --color-accent-hover: #8f2108;
-    --color-accent-active: #6b1805;
-    --color-on-accent: white;
-
-    /* Surfaces & edges */
-    --color-surface: #ffffff;
-    --color-card-edge: var(--color-brand-ink);
-    --color-card-line:#01110a1f;
-
-    /* Focus & status */
-    --color-focus-ring: var(--color-brand-forest);
-    --color-error: #9b1c31;
-    --color-success:#0a6a35;
-
-    /* Tags & press */
-    --color-tag-bg: var(--color-brand-mint);
-    --color-tag-ink: var(--color-brand-forest);
-    --color-press-bg: #a6d8c0;
-
-    /* Page gradient */
-    --color-bg-a: var(--color-brand-mint);
-    --color-bg-b: var(--color-brand-sage);
-    --color-bg-c: #f5d3c4;
-    --color-bg-glow: #ffb09ab3;
-    --page-gradient: linear-gradient(165deg,var(--color-bg-a) 0%,var(--color-bg-b) 52%,var(--color-bg-c) 100%);
-
-    /* Spacing */
-    --spacing-sp-1: 4px;
-    --spacing-sp-2: 8px;
-    --spacing-sp-3: 12px;
-    --spacing-sp-4: 16px;
-    --spacing-sp-5: 24px;
-    --spacing-sp-6: 32px;
-    --spacing-sp-7: 56px;
-    --spacing-sp-8: 96px;
-    --tap-target: 48px;
-    --container-max: 1120px;
-    --radius-none: 0;
-    --radius-button: 4px;
-    
-    /* Semantic aliases */
-    --card-gap: var(--spacing-sp-6);
-    --page-gutter: var(--spacing-sp-4);
-    /* color-scheme:light;*/
-
-    /* Display (heading family, weight 400 only, uppercase) */
-    --display-xl-size: clamp(3.4rem,15vw,8.5rem);
-    --display-xl-max: 136px;
-    --display-xl-lh: 0.86;/* @kind font */
-    --display-xl-ls: -0.01em;/* @kind font */
-    --display-lg-size: 72px;
-    --display-lg-lh: 0.95;/* @kind font */
-    /* Text (body family) */
-    --heading-3-size: 28px;
-    --heading-3-lh: 1.15;/* @kind font */
-    --heading-3-weight: 700;/* @kind font */
-    --body-lg-size: 21px;
-    --body-lg-lh: 1.5;/* @kind font */
-    --body-size: 18px;
-    --body-lh: 1.6;/* @kind font */
-    --caption-size: 15px;
-    --caption-lh: 1.45;/* @kind font */
-    --eyebrow-size: 15px;
-    --eyebrow-lh: 1.2;/* @kind font */
-    --eyebrow-ls: 0.08em;/* @kind font */
-    --eyebrow-weight: 700;/* @kind font */
-    --button-size: 18px;
-    --button-lh: 1;/* @kind font */
-    --button-weight: 700;/* @kind font */
-    /* Semantic aliases */
-    --color-body-text: var(--color-brand-ink);
-    --color-secondary-text: var(--color-ink-muted);
-    --color-link-text: var(--color-accent);
 }
 
 @theme inline {
-    --color-background: var(--background);
-    --color-foreground: var(--foreground);
     --font-title: var(--font-special-gothic-condensed);
     --font-sans: var(--font-special-gothic);
-}
+    --color-ink-muted: var(--ink-muted);
 
-@media (prefers-color-scheme: dark) {
-    :root {
-        --background: #0a0a0a;
-        --foreground: #ededed;
-    }
+    --color-accent: var(--accent);
+    --color-accent-hover: var(--accent-hover);
+    --color-accent-active: var(--accent-active);
+    --color-on-accent: var(--on-accent);
+
+    --color-surface: var(--surface);
+    --color-card-edge: var(--card-edge);
+    --color-card-line: var(--card-line);
+
+    --color-focus-ring: var(--focus-ring);
+    --color-error: var(--error);
+    --color-success: var(--success);
+
+    --color-tag-bg: var(--tag-bg);
+    --color-tag-ink: var(--tag-ink);
+    --color-press-bg: var(--press-bg);
+
+    --color-bg-a: var(--bg-a);
+    --color-bg-b: var(--bg-b);
+    --color-bg-c: var(--bg-c);
+    --color-bg-glow: var(--bg-glow);
+
+    --color-body-text: var(--ink);
+    --color-secondary-text: var(--ink-muted);
 }
 
 body {
-    background: var(--color-bg-b);
-    color: var(--foreground);
+    background: var(--bg-b);
+    color: var(--ink);
 }
 
 @keyframes hero-fade {
-  to {
-    opacity: 0;
-    transform: translateY(-2rem);
-  }
+    to {
+        opacity: 0;
+        transform: translateY(-2rem);
+    }
 }
 
 @utility hero-fade {
-  @media (prefers-reduced-motion: no-preference) {
-    @supports (animation-timeline: scroll()) {
-      animation: hero-fade linear both;
-      animation-timeline: scroll(root);
-      animation-range: 0 80svh;
+    @media (prefers-reduced-motion: no-preference) {
+        @supports (animation-timeline: scroll()) {
+            animation: hero-fade linear both;
+            animation-timeline: scroll(root);
+            animation-range: 0 80svh;
+        }
     }
-  }
 }
 
 #urlField {
-  position: absolute;
-  left: -9999px;
-  z-index: -999;
-  overflow: hidden;
-  height: 1px;
-  width: 1px;
-  pointer-events: none;
+    position: absolute;
+    left: -9999px;
+    z-index: -999;
+    overflow: hidden;
+    height: 1px;
+    width: 1px;
+    pointer-events: none;
 }
