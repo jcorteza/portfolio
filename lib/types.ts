@@ -3,5 +3,6 @@ export enum MessageStatus {
     PROCESSING,
     ERROR,
     SUCCESS,
-    POSSIBLE_SPAM
+    POSSIBLE_SPAM,
+    RATE_LIMITED
 }

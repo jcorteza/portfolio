@@ -11,6 +11,7 @@ import PauseIcon from './PauseIcon';
 import { RefObject, startTransition, useActionState, useEffect, useMemo, useRef, useState } from 'react';
 import { processContactRequest } from '../../../lib/actions';
 import { MessageStatus } from '../../../lib/types';
+import EmailLink from '../../_components/EmailLink';
 
 const InlineError = (id: string, text: string) => (
     <div id={id} className={clsx('flex items-start gap-2 text-sm', { 'pt-1': text })}>
@@ -27,24 +28,31 @@ type ErrorContext = {
 const Status = (status: MessageStatus, errors: ErrorContext[]) => {
     const errorMessage = errors && errors.length === 1 ? `There is ${errors.length} problem with your message` :
         errors && errors.length > 1 ? `There are ${errors.length} problems with your message` : '';
-    const isErrorState = errors.length > 0 || status === MessageStatus.ERROR || status === MessageStatus.POSSIBLE_SPAM;
+    const isErrorState = errors.length > 0 || status === MessageStatus.ERROR || status === MessageStatus.POSSIBLE_SPAM || status === MessageStatus.RATE_LIMITED;
     const icon = status === MessageStatus.SUCCESS ? <SuccessIcon /> :
         isErrorState ? <ErrorIcon /> :
             status === MessageStatus.PROCESSING ? <PauseIcon /> : null;
-    let headingText = errors.length > 0 ? errorMessage : '';
+    let heading: React.ReactNode = errors.length > 0 ? errorMessage : '';
     if (errors.length === 0) {
         switch (status) {
             case MessageStatus.SUCCESS:
-                headingText = 'Message sent';
+                heading = 'Message sent';
                 break;
             case MessageStatus.POSSIBLE_SPAM:
-                headingText = 'That was quick! Resubmit to verify you\'re not a bot.';
+                heading = 'That was quick! Resubmit to verify you\'re not a bot.';
+                break;
+            case MessageStatus.RATE_LIMITED:
+                heading = (
+                    <>
+                        You&rsquo;ve reached the limit for contact requests. Try again in an hour or <EmailLink altText='reach me by email' /> instead.
+                    </>
+                );
                 break;
             case MessageStatus.ERROR:
-                headingText = 'Something went wrong. Try again';
+                heading = 'Something went wrong. Try again';
                 break;
             case MessageStatus.PROCESSING:
-                headingText = 'Sending your message';
+                heading = 'Sending your message';
                 break;
         }
     }
@@ -65,7 +73,7 @@ const Status = (status: MessageStatus, errors: ErrorContext[]) => {
             {icon}
             <div className="flex flex-col gap-2">
                 <span className="font-bold text-brand-ink font-title">
-                    {headingText}
+                    {heading}
                 </span>
                 {errors.length > 0 &&
                     <ul className="flex flex-col gap-1.5 text-error">

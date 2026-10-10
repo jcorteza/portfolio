@@ -3,11 +3,11 @@
 import clsx from 'clsx';
 import { ACTIVE_INNER_SHADOW, CARD_EXTERNAL_LINK, FOCUS, NAV_COLORS_BASE, NAV_COLORS_INACTIVE } from '../../lib/styles';
 
-export default function EmailLink({ isFooterMenu }: { isFooterMenu?: boolean }) {
+export default function EmailLink({ isFooterMenu, altText }: { isFooterMenu?: boolean; altText?: string; }) {
     return (
         <a
             className={clsx(
-                'inline-block',
+                'inline-block cursor-pointer',
                 FOCUS,
                 {
                     'p-3 underline': isFooterMenu,
@@ -22,7 +22,7 @@ export default function EmailLink({ isFooterMenu }: { isFooterMenu?: boolean }) 
                 event.preventDefault();
                 window.open('mailto:hello@jcortez.dev');
             }}>
-            Email
+            {altText || 'Email'}
         </a>
     );
 }
