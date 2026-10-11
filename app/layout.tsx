@@ -18,10 +18,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
             className={`${specialGoth.variable} ${specialGothCond.variable} h-full antialiased`}
             suppressHydrationWarning
         >
-            <body className="min-h-full min-w-0 flex justify-center items-stretch">
+            <body className="relative min-w-0 w-full flex flex-col items-center">
                 <Script strategy='beforeInteractive' src='/loadThemeSetting.mjs' />
-                <div className="min-h-full min-w-0 flex flex-col gap-5 md:gap-10 w-5xl px-5 py-5">
-                    <NavBar />
+                <NavBar />
+                <div className="min-h-full min-w-0 flex flex-col gap-5 md:gap-10 max-w-5xl px-5 py-5">
                     {children}
                     <hr aria-hidden />
                     <Footer />

@@ -10,14 +10,14 @@ const PROJECTS = '/projects';
 const CONTACT = '/contact';
 const FOOTER_PADDING = 'inline-block p-3';
 
-export default function InternalLinkMenu({ isHeaderNav }: { isHeaderNav: boolean }) {
+export default function InternalLinkMenu({ isHeaderNav, closeMenuAction }: { isHeaderNav: boolean; closeMenuAction?: () => void; }) {
     const pathname = usePathname();
     return (
         <ul className={clsx(
-            'flex justify-between md:justify-normal text-body-text font-bold w-full md:w-auto',
+            'flex text-body-text font-bold w-full md:w-auto',
             {
                 'gap-1 flex-col': !isHeaderNav,
-                'md:gap-5': isHeaderNav
+                'flex-col sm:flex-row gap-5': isHeaderNav
             }
         )}>
             <li>
@@ -33,6 +33,7 @@ export default function InternalLinkMenu({ isHeaderNav }: { isHeaderNav: boolean
                         }
                     )}
                     href={HOME}
+                    onClick={closeMenuAction}
                     prefetch={false}>
                     Home
                 </Link>
@@ -49,6 +50,7 @@ export default function InternalLinkMenu({ isHeaderNav }: { isHeaderNav: boolean
                             'underline': pathname !== PROJECTS && !isHeaderNav
                         }
                     )}
+                    onClick={closeMenuAction}
                     href={PROJECTS}>
                     Projects
                 </Link>
@@ -65,6 +67,7 @@ export default function InternalLinkMenu({ isHeaderNav }: { isHeaderNav: boolean
                             'underline': pathname !== CONTACT && !isHeaderNav
                         }
                     )}
+                    onClick={closeMenuAction}
                     href={CONTACT}
                     prefetch={false}>
                     Contact
