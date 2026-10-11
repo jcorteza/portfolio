@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 
+@custom-variant desktop (@media (min-width: 48rem) and (min-height: 44rem));
+
 :root {
     --brand-rust: #ba2d0b;
     --brand-mint: #d5f2e3;
