@@ -1,6 +1,6 @@
 export default function Emblem({ isForFooter }: { isForFooter?: boolean }) {
     return (
-        <svg className={isForFooter ? 'w-16 h-16' : 'w-14 h-14'} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+        <svg className={isForFooter ? 'w-16 h-16' : 'w-12 h-12 sm:w-14 sm:h-14'} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
             {/* <style>
                 <!-- .stroke { stroke: #003e1f } -->
                 .stroke { stroke: #000000 }

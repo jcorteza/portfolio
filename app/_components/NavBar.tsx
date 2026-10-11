@@ -15,12 +15,12 @@ export default function NavBar() {
                 'fixed z-200 bg-press-bg': isMenuOpen
             }
         )}>
-            <div className="relative max-w-5xl h-19 w-full flex items-end justify-between">
+            <div className="relative max-w-5xl h-16 sm:h-19 w-full flex items-end justify-between">
                 <EmblemLink closeMenuAction={() => setMenuOpen(false)} />
                 <nav className={clsx(
-                    'sm:bg-transparent sm:relative sm:w-auto sm:flex-row sm:h-auto sm:top-0 sm:p-0 sm:justify-end sm:mr-5',
+                    'sm:bg-transparent sm:flex sm:relative sm:w-auto sm:flex-row sm:h-auto sm:top-0 sm:p-0 sm:justify-end sm:mr-5',
                     {
-                        'bg-press-bg absolute w-full top-full h-[calc(100svh-(--spacing(22)))] flex flex-col justify-center p-5': isMenuOpen,
+                        'bg-press-bg absolute w-full top-full h-[calc(100dvh-(--spacing(16)))] flex flex-col justify-center p-5': isMenuOpen,
                         'hidden': !isMenuOpen
                     }
                 )}>   
