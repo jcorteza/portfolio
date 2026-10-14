@@ -16,7 +16,7 @@ export default function GlobalNotfound() {
                 <div className="min-h-full min-w-0 flex flex-col gap-5 md:gap-10 w-5xl px-5 py-5">
                     <NavBar/>
                     <StatusCard status={404} />
-                    <hr aria-hidden />
+                    <hr aria-hidden className="text-brand-ink" />
                     <Footer />
                 </div>
             </body>

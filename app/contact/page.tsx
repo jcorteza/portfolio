@@ -1,5 +1,5 @@
 import clsx from 'clsx';
-import { CARD_BASE, TEXT } from '../../lib/styles';
+import { CARD_BASE, CARD_DIVIDER, TEXT } from '../../lib/styles';
 import ExternalLinkMenu from '../_components/ExternalLinkMenu';
 import ContactForm from './_components/ContactForm';
 
@@ -20,7 +20,7 @@ export default function Contact() {
                         <h1 className={TEXT.cardTitle}>Contact</h1>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
                     </div>
-                    <hr aria-hidden />
+                    <hr aria-hidden className={CARD_DIVIDER} />
                     <div className='hidden min-w-0 shrink md:flex flex-col gap-3'>
                         {ExternalLinks}
                     </div>

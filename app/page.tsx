@@ -8,8 +8,8 @@ import SkillsTags from '../components/SkillsTags';
 import LinkButton from '../components/LinkButton';
 import atacamaHike from './atacama-hike.jpg'
 
-const symday = projects[0];
-
+const symday = projects.symday;
+const projectList = Object.values(projects);
 export default function Home() {
     return (
         <main className="relative grow min-w-0 w-full flex flex-col justify-between gap-3 sm:gap-5 md:gap-10">
@@ -45,7 +45,7 @@ export default function Home() {
                                 <div className={TEXT.cardSubtitle}>{symday.title}</div>
                             </h3>
                             <p className="text-body-text">{symday.description}</p>
-                            <SkillsTags skills={[...new Set(projects.flatMap(project => project.skills))]} />
+                            <SkillsTags skills={[...new Set(projectList.flatMap(project => project.skills))]} />
                             <div className='flex flex-col items-end sm:flex-row gap-2'>
                                 <LinkButton href='/projects'>See all projects</LinkButton>
                                 <LinkButton href='https://symday-tracker.app/demo' isSecondaryAction isExternalLink target='blank'>Try Demo</LinkButton>
@@ -58,7 +58,7 @@ export default function Home() {
                     <h3 className={TEXT.cardSubtitle}>
                         Tech accross projects
                     </h3>
-                    <SkillsTags skills={[...new Set(projects.flatMap(project => project.skills))]} />
+                    <SkillsTags skills={[...new Set(projectList.flatMap(project => project.skills))]} />
                 </div>
                 <hr aria-hidden className={CARD_DIVIDER} />
                 <div className="flex flex-col gap-3 text-body-text">
