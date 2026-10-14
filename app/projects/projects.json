@@ -3,13 +3,13 @@
         "projectUrl": "/projects/symptom-tracker-web-app",
         "type": "Web App",
         "title": "SymDay",
-        "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+        "description": "A symptom tracker that measure symptoms on a customizable scale and normalizes the data to communicate trends.",
         "imageUrl": "/images/symday.png",
         "imageUrlSmall": "/images/symday2.png",
         "imageAlt": "Screenshot of SymDay landing page",
         "imageWidth": 1200,
         "imageHeight": 1000,
-        "skills": ["TypeScript", "React", "Next.js"]
+        "skills": ["TypeScript", "React", "Next.js", "PostgreSQL", "NextAuth.js", "Tailwind CSS", "Vitest", "React Testing Library", "Vercel", "Recharts", "Node.js"]
     },
     {
         "projectUrl": "/projects/project-one",
