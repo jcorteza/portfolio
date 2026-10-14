@@ -4,6 +4,7 @@ import clsx from 'clsx';
 import { CARD_BASE, DECORATIVE_TAG, PROJECT_SKILL_TAG, TEXT } from '../../../lib/styles';
 import Image from 'next/image';
 import LinkButton from '../../../components/LinkButton';
+import SkillsTags from '../../../components/SkillsTags';
 
 export type Props = {
     projectUrl: string;
@@ -40,9 +41,7 @@ export default function ProjectCard({
                     <div className={TEXT.cardSubtitle}>{title}</div>
                 </h2>
                 <p className="text-body-text">{description}</p>
-                <ul className="flex flex-wrap gap-2">
-                    {skills.map((skill, idx) => <li key={idx} className={PROJECT_SKILL_TAG}>{skill}</li>)}
-                </ul>
+                <SkillsTags skills={skills} />
                 <div className={clsx('flex flex-col items-end sm:flex-row', { 'gap-2': !!source })}>
                     <LinkButton href={projectUrl}>View Project</LinkButton>
                     {source && <LinkButton href={source} isSecondaryAction isExternalLink target='blank'>View Source</LinkButton>}

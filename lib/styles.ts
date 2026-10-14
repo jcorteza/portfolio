@@ -41,3 +41,5 @@ export const THEME_BUTTON_STYLE = {
     active: 'cursor-default pointer-events-none bg-body-text text-surface',
     inactive: 'cursor-pointer bg-surface text-body-text'
 };
+
+export const CARD_DIVIDER = 'text-(--card-line)';
