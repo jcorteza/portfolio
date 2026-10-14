@@ -35,8 +35,8 @@ export default function ProjectCard({
     return (
         <div className={clsx(CARD_BASE, 'flex items-center flex-col gap-5 md:grid md:grid-cols-2 md:gap-10')}>
             <Image src={imageUrlSmall} alt={imageAlt} loading='eager' className="sm:hidden" width={500} height={500} />
-            <div className="flex flex-col gap-4 sm:order-last md:order-first">
-                <h2 className='flex flex-col gap-4'>
+            <div className="flex flex-col gap-2.25 sm:order-last md:order-first">
+                <h2 className='flex flex-col gap-2.25'>
                     <div className={DECORATIVE_TAG}>{type}</div>
                     <div className={TEXT.cardSubtitle}>{title}</div>
                 </h2>

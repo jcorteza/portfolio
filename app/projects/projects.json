@@ -3,7 +3,7 @@
         "projectUrl": "/projects/symptom-tracker-web-app",
         "type": "Web App",
         "title": "SymDay",
-        "description": "A symptom tracker that measure symptoms on a customizable scale and normalizes the data to communicate trends.",
+        "description": "A symptom tracker that records each symptom on a user-defined scale and plots them together on a single graph, prioritizing trends over exact values.",
         "imageUrl": "/images/symday.png",
         "imageUrlSmall": "/images/symday2.png",
         "imageAlt": "Screenshot of SymDay landing page",
