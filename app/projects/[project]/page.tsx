@@ -31,6 +31,7 @@ const dl = (title: string, text?: string, skills?: string[]) => (
 
 export default async function ProjectCaseStudy({ params }: { params: Promise<{ project: string; }>}) {
     const project = (await params).project;
+    const { default: Content } = await import(`../_caseStudies/${project}.mdx`)
     const {
         title,
         description,
@@ -48,7 +49,7 @@ export default async function ProjectCaseStudy({ params }: { params: Promise<{ p
     const hasNext = projectIdx < projectEntries.length - 1;
 
     return (
-        <main className="w-full min-w-0 flex flex-col gap-5">
+        <main className="w-full min-w-0 flex flex-col gap-5 md:gap-7">
             <nav aria-label="Breadcrumbs">
                 <ol className="font-bold text-sm flex">
                     <li>
@@ -69,29 +70,35 @@ export default async function ProjectCaseStudy({ params }: { params: Promise<{ p
                     </li>
                 </ol>
             </nav>
-            <div className="w-full min-w-0 flex flex-col gap-3">
-                <h1 className="flex flex-col gap-2 sm:gap-3 md:gap-5">
-                    <div className={DECORATIVE_TAG}>Case Study</div>
-                    <div className={TEXT.cardTitle}>{title}</div>
-                </h1>
-                <p>{description}</p>
-                <div className="flex">
-                    {liveUrl && <LinkButton href={liveUrl}>Visit Live Site</LinkButton>}
-                    {source && <LinkButton href={source} isSecondaryAction={!!liveUrl}>View Source</LinkButton>}
+            <div className="w-full min-w-0 flex flex-col md:flex-row gap-3 md:gap-10">
+                <div className="w-full min-w-0 flex flex-col gap-3">
+                    <h1 className="flex flex-col gap-2 sm:gap-3 md:gap-5">
+                        <div className={DECORATIVE_TAG}>Case Study</div>
+                        <div className={clsx(TEXT.cardTitle, 'md:text-9xl')}>{title}</div>
+                    </h1>
+                    <p className="md:text-lg">{description}</p>
+                    <div className="flex">
+                        {liveUrl && <LinkButton href={liveUrl}>Visit Live Site</LinkButton>}
+                        {source && <LinkButton href={source} isSecondaryAction={!!liveUrl}>View Source</LinkButton>}
+                    </div>
                 </div>
-                <Image loading='eager' src={`/images/${project}.png`} alt={imageAlt} width={1500} height={1125} />
+                <Image loading='eager' src={`/images/${project}.png`} alt={imageAlt} width={1500} height={1125} className='rounded-sm border border-(--card-line) md:max-w-1/2' />
             </div>
             <dl className={clsx(
-                'w-full min-w-0 flex flex-col gap-4',
+                'w-full min-w-0 flex flex-col gap-4 md:gap-5',
                 CARD_BASE
             )}>
-                {dl('Role', role)}
-                {dl('Timeline', timeline)}
-                {dl('Team', team)}
-                {dl('Status', status)}
+                <div className="md:flex md:justify-between md:gap-5">
+                    {dl('Role', role)}
+                    {dl('Timeline', timeline)}
+                    {dl('Team', team)}
+                    {dl('Status', status)}
+                </div>
                 {dl('Built with', undefined, skills)}
             </dl>
-
+            <ol className='flex flex-col gap-4'>
+                <Content />
+            </ol>
             {(hasPrev || hasNext) && <hr aria-hidden className="text-brand-ink" />}
             <nav className={clsx(
                 'w-full min-w-0',
