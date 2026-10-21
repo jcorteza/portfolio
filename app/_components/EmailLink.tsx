@@ -7,10 +7,10 @@ export default function EmailLink({ isFooterMenu, altText }: { isFooterMenu?: bo
     return (
         <a
             className={clsx(
-                'inline-block cursor-pointer',
+                'py-3 inline-block cursor-pointer',
                 FOCUS,
                 {
-                    'p-3 underline': isFooterMenu,
+                    'px-3 underline': isFooterMenu,
                     [NAV_COLORS_INACTIVE]: isFooterMenu,
                     [NAV_COLORS_BASE]: isFooterMenu,
                     [ACTIVE_INNER_SHADOW]: isFooterMenu,

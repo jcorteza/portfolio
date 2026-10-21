@@ -7,7 +7,7 @@ export default function Contact() {
     const ExternalLinks = (
         <>
             <h2 className={TEXT.cardSubtitle}>Prefer to skip the form?</h2>
-            <p>Lorem ipsum dolor sit amet.</p>
+            <p>Reach me directly using any of these links.</p>
             <ExternalLinkMenu isFooterMenu={false} />
         </>
     );
@@ -18,7 +18,7 @@ export default function Contact() {
                 <div className='min-w-0 shrink flex flex-col justify-stretch gap-5'>
                     <div className='grow flex flex-col gap-3'>
                         <h1 className={TEXT.cardTitle}>Contact</h1>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
+                        <p>I&rsquo;m a full-stack engineer open to remote roles and interesting projects. Tell me what you&rsquo;re working on and I&rsquo;ll get back to you within a couple of days.</p>
                     </div>
                     <hr aria-hidden className={CARD_DIVIDER} />
                     <div className='hidden min-w-0 shrink md:flex flex-col gap-3'>

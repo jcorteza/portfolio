@@ -6,17 +6,14 @@ export default function ExternalLinkMenu({ isFooterMenu }: { isFooterMenu: boole
     return (
         <ul className={clsx(
             'flex flex-col font-bold',
-            {
-                'gap-3': !isFooterMenu
-            }
         )}>
             <li>
                 <a
                     className={clsx(
-                        'inline-block',
+                        'py-3 inline-block',
                         FOCUS,
                         {
-                            'p-3 underline': isFooterMenu,
+                            'px-3 underline': isFooterMenu,
                             [NAV_COLORS_INACTIVE]: isFooterMenu,
                             [NAV_COLORS_BASE]: isFooterMenu,
                             [ACTIVE_INNER_SHADOW]: isFooterMenu,
@@ -32,10 +29,10 @@ export default function ExternalLinkMenu({ isFooterMenu }: { isFooterMenu: boole
             <li>
                 <a
                     className={clsx(
-                        'inline-block',
+                        'py-3 inline-block',
                         FOCUS,
                         {
-                            'p-3 underline': isFooterMenu,
+                            'px-3 underline': isFooterMenu,
                             [NAV_COLORS_INACTIVE]: isFooterMenu,
                             [NAV_COLORS_BASE]: isFooterMenu,
                             [ACTIVE_INNER_SHADOW]: isFooterMenu,

@@ -3,7 +3,7 @@
         "type": "Health Web App",
         "title": "SymDay",
         "description": "A symptom tracker that records each symptom on a user-defined scale and plots them together on a single graph, prioritizing trends over exact values.",
-        "imageAlt": "Screenshot of SymDay landing page",
+        "imageAlt": "SymDay landing page with hero text: Symptom tracking calibrated to you. There are sign up and try demo buttons below that.",
         "skills": ["TypeScript", "React", "Next.js", "PostgreSQL", "NextAuth.js", "Tailwind CSS", "Vitest", "React Testing Library", "Vercel", "Recharts", "Node.js"],
         "liveUrl": "https://symday-tracker.app/",
         "role": "Product, UX and accessibility, full-stack development",
