@@ -1,11 +1,12 @@
 import CaseStudyCard from '../_components/CaseStudyCard.tsx'
+import CaseStudyExternalLink, { LinkType } from '../_components/CaseStudyExternalLink.tsx'
 import severity from './severity.png'
 import logging from './logging.png'
 import notes from './notes.png'
 import overview from './overview.png'
 import Image from 'next/image'
 
-<CaseStudyCard cardNo='01'>
+<CaseStudyCard cardNo="01">
 
 ## Overview
 
@@ -23,51 +24,51 @@ I wanted people with chronic illness to be able to define how each symptom is me
 
 ### Tradeoff
 
-After data normalization, the graph can't present users' data as entered without creating a confusing experience, which means users can't read their exact logged values off it. To mitigate this, I removed the y-axis scale and designed the Overview page to prioritize trends over exact values. However, I made it possible for users to hover over data points and see the true logged value in the sidebar and a link to the logged point's data in the Daily page.
+After data normalization, the graph can&rsquo;t present users&rsquo; data as entered without creating a confusing experience, which means users can&rsquo;t read their exact logged values off it. To mitigate this, I removed the y-axis scale and designed the Overview page to prioritize trends over exact values. However, I made it possible for users to hover over data points and see the true logged value in the sidebar and a link to the logged point&rsquo;s data in the Daily page.
 
 </CaseStudyCard>
 
-<CaseStudyCard cardNo='02'>
+<CaseStudyCard cardNo="02">
 
 ## Key features
 
-<ol className='md:grid md:grid-cols-2 md:gap-5'>
+<ol className="grid md:grid-cols-2 gap-3 md:gap-y-5 md:gap-x-10">
 
-<li className='flex flex-col gap-4'>
+<li className="flex flex-col gap-2 md:gap-4">
 
 ### Personalized scales
 
-<Image src={severity} width={736} height={517} alt='' className='rounded-xl border border-(--card-line)' />
+<Image src={severity} width={736} height={517} alt="" className="rounded-xl border border-(--card-line)" />
 
 I let users define how each symptom is measured, since a 7 out of 10 means something different to everyone. Severity, count, and duration symptoms have custom thresholds, and a live preview shows the result before saving.
 
 </li>
 
-<li className='flex flex-col gap-4'>
+<li className="flex flex-col gap-2 md:gap-4">
 
 ### Data visualization
 
-<Image src={overview} width={1500} height={1089} alt='' className='rounded-xl border border-(--card-line)' />
+<Image src={overview} width={1500} height={1089} alt="" className="rounded-xl border border-(--card-line)" />
 
 Normalizing each symptom to its own scale lets different symptoms share one graph. I prioritized trends over exact values, which is the tradeoff from the Overview.
 
 </li>
 
-<li className='flex flex-col gap-4'>
+<li className="flex flex-col gap-2 md:gap-4">
 
 ### Simplified logging
 
-<Image src={logging} width={1500} height={606} alt='' className='rounded-xl border border-(--card-line)' />
+<Image src={logging} width={1500} height={606} alt="" className="rounded-xl border border-(--card-line)" />
 
 I designed the daily page to keep tracking quick and low-effort. Each symptom gets the input that fits its type, and several offer more than one way to enter a value.
 
 </li>
 
-<li className='flex flex-col gap-4'>
+<li className="flex flex-col gap-2 md:gap-4">
 
 ### Tracking context
 
-<Image src={notes} width={1500} height={247} alt='' className='rounded-xl border border-(--card-line)' />
+<Image src={notes} width={1500} height={247} alt="" className="rounded-xl border border-(--card-line)" />
 
 I added free-text notes with hashtag extraction, so context like a late night or a flare-up becomes filterable later without a separate tagging step.
 
@@ -77,27 +78,27 @@ I added free-text notes with hashtag extraction, so context like a late night or
 
 </CaseStudyCard>
 
-<CaseStudyCard cardNo='03'>
+<CaseStudyCard cardNo="03">
 
 ## Product Decisions
 
-### How I scoped it
+### Scope
 
 The original scope of SymDay was the live demo feature, which includes automatic authentication as a demo user, adding a symptom and logging without saving, and reviewing symptom data on the Overview page. Once these core features were built, I moved on to a minimum viable product&mdash;a fully fledged app covering all the necessary bases: legal, data privacy, user authentication flows, and user contact avenues (contact form and email).
 
 Deploying SymDay beta meant sidelining a few features to prioritize data gathering and promotion of the app during the beta stage:
 
 - **Habit tracking** would add another factor users can filter their data on, so they can track how their symptoms improve or worsen based on habits like water intake and exercise.
-- **Wearables API integration** is a key feature in many habit trackers, since users find it useful to track all their data in one place, including the specific symptoms they're interested in.
-- **Stripe integration** is the monetization piece for subscriptions, which isn't implemented.
+- **Wearables API integration** is a key feature in many habit trackers, since users find it useful to track all their data in one place, including the specific symptoms they&rsquo;re interested in.
+- **Stripe integration** is the monetization piece for subscriptions, which isn&rsquo;t implemented.
 
 Until there is concrete data showing users are actually interested in and motivated to use the app, monetization efforts are deferred.
 
 ### Pricing and beta plan
 
-The pricing page is live, but monetization is not. It's informational and helps users decide whether they even want to try the app, since there's no point in trying an app that would later be too expensive to keep using. Pricing for SymDay has been established as part of the data collection phase of beta, and it is priced competitively with similar apps with similar features.
+The pricing page is live, but monetization is not. It&rsquo;s informational and helps users decide whether they even want to try the app, since there&rsquo;s no point in trying an app that would later be too expensive to keep using. Pricing for SymDay has been established as part of the data collection phase of beta, and it is priced competitively with similar apps with similar features.
 
-Beta testers get the full Horizons plan free for 6 months, instead of the 60-day trial. At the end there's no automatic charge. They choose whether to keep Horizons or switch to Daily. In exchange, testers agree to provide feedback about their experience.
+Beta testers get the full Horizons plan free for 6 months, instead of the 60-day trial. At the end there&rsquo;s no automatic charge. They choose whether to keep Horizons or switch to Daily. In exchange, testers agree to provide feedback about their experience.
 
 Unlike most apps, which implement automatic subscription renewal, SymDay implements manual renewals. This is because many people dealing with chronic illnesses or neurodevelopmental disorders struggle to remember to cancel subscriptions they are no longer interested in. As an app designed for these users, an automatic subscription style can come across as predatory. However, in order to make retention as easy as possible, a week-long reminder to renew has been implemented. Additionally, users have a 5-day grace period after expiration to renew.
 
@@ -107,11 +108,11 @@ The Daily subscription offers the smallest usable "bite" of the product that wou
 
 ### Tradeoff
 
-Empowering users in this way makes retention trickier. Revenue depends on users choosing to renew, so more planning and effort needs to go into making sure they're satisfied with the product and will want to renew manually.
+Empowering users in this way makes retention trickier. Revenue depends on users choosing to renew, so more planning and effort needs to go into making sure they&rsquo;re satisfied with the product and will want to renew manually.
 
 </CaseStudyCard>
 
-<CaseStudyCard cardNo='04'>
+<CaseStudyCard cardNo="04">
 
 ## Accessi&shy;bility
 
@@ -123,9 +124,9 @@ Given SymDay caters to users with chronic illness and neurodevelopmental disorde
 
 - Communicating information in more than one way, so nothing depends on color alone: color, icons, text decoration (such as underlining), simple to parse text, and labels and structure that screen readers can read.
 - Multiple ways of interacting with logging: text inputs, buttons, toggles, sliders.
-- A table view alternative to the graph on the Overview page. I originally created it for screen readers, since a graph isn't readable to them, but it later turned into a feature available for all users.
+- A table view alternative to the graph on the Overview page. I originally created it for screen readers, since a graph isn&rsquo;t readable to them, but it later turned into a feature available for all users.
 
-### How I checked it
+### Testing
 
 I began by using Google Lighthouse to analyze SymDay and address the accessibility issues it reported, which got every page to a score of 100.
 
@@ -135,7 +136,7 @@ I identified places where there were redundant labels or roles. I also found pla
 
 Working my way through the app, I was able to learn how different aria attributes, roles, and html elements are read aloud differently. For example, I learned that placeholder text was included in the explanation and could come across as out of place or random, so I cut placeholders and made sure that field labels and aria descriptions included the necessary context.
 
-### What's left
+### What&rsquo;s left
 
 - Re-testing with VoiceOver when changes affect markup, labels, or interactive components.
 - Testing with alternate screen readers such as NVDA.
@@ -143,46 +144,74 @@ Working my way through the app, I was able to learn how different aria attribute
 
 </CaseStudyCard>
 
-<CaseStudyCard cardNo='05'>
+<CaseStudyCard cardNo="05">
 
-### Beta: onboarding
+### Beta: Onboarding
 
 SymDay is in beta with a couple of testers, and I talk with them about how they use it. The most useful feedback so far came from how one tester set up a count symptom.
 
 They were tracking a symptom and wanted to set the max to 30 or 31, to match the days in a month. The max is meant to be the top of the scale for a single day, and what they wanted was a per-day count. The symptom setup used the wording "maximum" and "track up to", and the logging widget showed "4/10", so they read the max as a quota. They had also skimmed the welcome content and gone straight to customizing.
 
-I considered this a problem with my wording and display, not with the tester. The tester suggested a quiz-style onboarding wizard, but I decided against it. A wizard would design for people who fit into categories and limit the scales they could create on their own, which goes against how SymDay is built. Instead, I rewrote the modal copy to say the max isn't a hard limit, added a short "per day" line, and restructured the welcome page into clearer sections.
+I considered this a problem with my wording and display, not with the tester. The tester suggested a quiz-style onboarding wizard, but I decided against it. A wizard would design for people who fit into categories and limit the scales they could create on their own, which goes against how SymDay is built. Instead, I rewrote the modal copy to say the max isn&rsquo;t a hard limit, added a short "per day" line, and restructured the welcome page into clearer sections.
 
-For users who struggle to create their own symptoms, I've considered offering a couple of predefined ones, like pain or sleep. That work is deferred while I gather more feedback, and I'm still testing the changes with more users.
+For users who struggle to create their own symptoms, I&rsquo;ve considered offering a couple of predefined ones, like pain or sleep. That work is deferred while I gather more feedback, and I&rsquo;m still testing the changes with more users.
 
 </CaseStudyCard>
 
-<CaseStudyCard cardNo='06'>
+<CaseStudyCard cardNo="06">
 
 ## Engin&shy;eering
 
 ### Data model
 
+The part of the data model I find most interesting is the composite primary key on both the symptom entry and notes entry tables. SymDay tracks one entry per day, and a symptom tracker doesn&rsquo;t need a record of every edit, so I didn&rsquo;t want an id column that would exist only to be a primary key. Instead, each entry is keyed on the symptom (or the user, for notes) and the local date. This means logging again for the same day overwrites the existing entry.
+
 ### Security and auth
 
-### Testing and deployment
+The most interesting problem in auth was how to log a user out of all existing sessions at once, since a signed JWT can&rsquo;t be taken back once it&rsquo;s issued. Instead of tracking every token, I store a security stamp on each user and carry a copy in their session token. Every request compares the two, and a mismatch ends the session. Any change to a password or email updates the stamp, so every session issued before that point stops working. The security stamp handles sessions that already exist, but what about account signups, email verification, and password resets?
+
+Access codes at account creation, email verification links, and password reset links are all single-use. I set each one up so the whole flow either finishes or doesn&rsquo;t happen at all, which means a token can&rsquo;t be used twice and a flow can&rsquo;t stop halfway. Each one runs as a single SQL statement, so every step happens or none of them do. A used token is indicated by a timestamp (used or redeemed).
+
+Single-use tokens limit what someone can do with a link, but they don&rsquo;t stop someone from requesting them over and over. I added rate limiting with Upstash Redis to slow down repeated requests to endpoints that send emails or check credentials. I chose Upstash because it was the quickest way to get protection in place. The tradeoff is that I gave up the experience of building a limiter myself and some fine-tuned control over how it behaves.
 
 </CaseStudyCard>
 
-<CaseStudyCard cardNo='07'>
+<CaseStudyCard cardNo="07">
 
 ## Lessons
 
-### What went wrong
+### What I&rsquo;d do differently
 
-### What I would do differently
+- **Higher estimates:** Throughout development I tried to keep momentum going by giving myself estimates for the next chunk of work. More often than not, those estimates were too low, excluding the time it would take to think through decisions about the work to come. I would include the time it takes to think through and research the user experience and accessibility, so I can really consider those pros and cons.
+
+- **Starting with a design system:** I would think through and create the design from the beginning. I fell into the trap of having Claude mockup components little by little, uploading screenshots of the current status of app as I went, which led to inconsistencies in the design&mdash;most notably the buttons.
+
+- **Smoke testing:** After signup (without an access code) broke in production, I learned the value of smoke testing. I had checked that path worked when I first built it. Later, while adding access code signup, I combined the database queries into a single query so the steps would all succeed or fail together and prevent any weird behavior. In doing that, I forgot to make the same correction to the normal signup query. Now I run a smoke test before every deploy that walks through both signup paths, login, and logging an entry, but a smoke test plan from the beginning would&rsquo;ve made a huge difference.
 
 ### What's next
 
+- **More beta users:** I&rsquo;m aiming for around 30 beta users by about the first week of December 2026, mainly through a social media campaign I&rsquo;m developing. I need to understand whether it&rsquo;s viable to continue SymDay and move toward monetization, and what testers tell me will decide that.
+- **What depends on the beta:** If the feedback supports it, I&rsquo;ll start charging and keep growing through word of mouth in the chronic illness community. Wearables integration and habit tracking may also be needed to make SymDay competitive, so I&rsquo;d build them next.
+- **Stripe, either way:** Even if monetization doesn&rsquo;t happen, I&rsquo;m considering building the Stripe integration for the experience, since it&rsquo;s the one major piece of the app I haven&rsquo;t built.
+
 </CaseStudyCard>
 
-<CaseStudyCard cardNo='08'>
+<CaseStudyCard cardNo="08">
 
 ## Related writing
+
+<ul className="w-full flex flex-col gap-2">
+
+<CaseStudyExternalLink href="https://lnkd.in/p/eWSR7SGd" date="Oct 3, 2026" type={LinkType.DEEP_DIVE}>Beta Reflections</CaseStudyExternalLink>
+
+<CaseStudyExternalLink href="https://lnkd.in/p/efy3Bnu6" date="Oct 1, 2026" type={LinkType.UPDATE}>Beta Announcement</CaseStudyExternalLink>
+
+<CaseStudyExternalLink href="https://lnkd.in/p/eF3Jv-2z" date="Aug 19, 2026" type={LinkType.DEEP_DIVE}>Accessibility Writeup</CaseStudyExternalLink>
+
+<CaseStudyExternalLink href="https://lnkd.in/p/eZg-66E3" date="Jun 19, 2026" type={LinkType.UPDATE}>Full Demo Release</CaseStudyExternalLink>
+
+<CaseStudyExternalLink href="https://lnkd.in/p/eSPHe_sW" date="Jun 01, 2026" type={LinkType.UPDATE}>Initial Demo Release</CaseStudyExternalLink>
+
+</ul>
 
 </CaseStudyCard>

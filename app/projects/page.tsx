@@ -18,10 +18,9 @@ export default function ProjectsPage() {
             <div className={clsx(CARD_BASE, 'flex flex-col gap-5')}>
                 <div className="flex flex-col gap-3">
                     <h1 className={TEXT.cardTitle}>Projects</h1>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.</p>
                 </div>
-                <hr aria-hidden className={CARD_DIVIDER} />
-                <ProjectFilter filterOptions={new Set(projectsList.flatMap(([_, project]) => project.skills))} filters={activeFilters} setFiltersAction={setActiveFilters} />
+                {/* <hr aria-hidden className={CARD_DIVIDER} />
+                <ProjectFilter filterOptions={new Set(projectsList.flatMap(([_, project]) => project.skills))} filters={activeFilters} setFiltersAction={setActiveFilters} /> */}
             </div>
             {projectsList
                 .filter(([_, project]) => activeFilters.values().every((filter) => filterHasMatch(filter, project.skills)))

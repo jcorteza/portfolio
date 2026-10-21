@@ -62,6 +62,10 @@ html.dark {
     --shadow-card-raised:0 0 64px -8px #73ba9b59, 0 0 20px -4px #73ba9b40;
     --shadow-button:0 0 20px -6px #ff8a6b66;
     color-scheme: dark;
+
+    img {
+        filter: brightness(0.8)
+    }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -89,6 +93,10 @@ html.dark {
         --shadow-card-raised:0 0 64px -8px #73ba9b59, 0 0 20px -4px #73ba9b40;
         --shadow-button:0 0 20px -6px #ff8a6b66;
         color-scheme: dark;
+    }
+
+    img {
+        filter: brightness(0.8)
     }
 }
 

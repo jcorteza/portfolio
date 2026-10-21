@@ -23,7 +23,7 @@ type Project = {
 const projectEntries = Object.entries(projects)
 
 const dl = (title: string, text?: string, skills?: string[]) => (
-    <div className="w-full min-w-0 flex flex-col gap-1">
+    <div className={clsx('w-full min-w-0 flex flex-col gap-1', { 'md:col-span-4': skills })}>
         <dt className="font-bold text-ink-muted">{title}</dt>
         <dd className="text-brand-ink">{text || <SkillsTags skills={skills as string[]} />}</dd>
     </div>
@@ -85,15 +85,13 @@ export default async function ProjectCaseStudy({ params }: { params: Promise<{ p
                 <Image loading='eager' src={`/images/${project}.png`} alt={imageAlt} width={1500} height={1125} className='rounded-sm border border-(--card-line) md:max-w-1/2' />
             </div>
             <dl className={clsx(
-                'w-full min-w-0 flex flex-col gap-4 md:gap-5',
+                'w-full min-w-0 grid gap-4 md:grid-cols-4',
                 CARD_BASE
             )}>
-                <div className="md:flex md:justify-between md:gap-5">
-                    {dl('Role', role)}
-                    {dl('Timeline', timeline)}
-                    {dl('Team', team)}
-                    {dl('Status', status)}
-                </div>
+                {dl('Role', role)}
+                {dl('Timeline', timeline)}
+                {dl('Team', team)}
+                {dl('Status', status)}
                 {dl('Built with', undefined, skills)}
             </dl>
             <ol className='flex flex-col gap-4'>

@@ -33,8 +33,8 @@ export const PROJECT_SKILL_TAG = 'px-2 py-1 font-bold bg-tag-bg text-tag-ink tex
 export const FORM_INPUT = 'min-w-0 border border-card-edge px-3 py-2';
 
 export const TEXT = {
-    cardTitle: 'uppercase font-title text-6xl',
-    cardSubtitle: 'font-bold text-2xl'
+    cardTitle: 'uppercase font-title text-5xl sm:text-6xl',
+    cardSubtitle: 'font-bold text-xl sm:text-2xl'
 };
 
 export const THEME_BUTTON_STYLE = {
