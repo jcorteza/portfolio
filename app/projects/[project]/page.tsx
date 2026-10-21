@@ -78,8 +78,8 @@ export default async function ProjectCaseStudy({ params }: { params: Promise<{ p
                     </h1>
                     <p className="md:text-lg">{description}</p>
                     <div className="flex">
-                        {liveUrl && <LinkButton href={liveUrl}>Visit Live Site</LinkButton>}
-                        {source && <LinkButton href={source} isSecondaryAction={!!liveUrl}>View Source</LinkButton>}
+                        {liveUrl && <LinkButton target="_blank" href={liveUrl}>Visit Live Site</LinkButton>}
+                        {source && <LinkButton target="_blank" href={source} isSecondaryAction={!!liveUrl}>View Source</LinkButton>}
                     </div>
                 </div>
                 <Image loading='eager' src={`/images/${project}.png`} alt={imageAlt} width={1500} height={1125} className='rounded-sm border border-(--card-line) md:max-w-1/2' />
