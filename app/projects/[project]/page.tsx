@@ -65,7 +65,7 @@ export default async function ProjectCaseStudy({ params }: { params: Promise<{ p
                             Projects
                         </Link>
                     </li>
-                    <li aria-current="page" className="text-brand-ink">
+                    <li aria-current="page" className="text-body-text">
                         <span aria-hidden>/&nbsp;</span>{title}
                     </li>
                 </ol>
