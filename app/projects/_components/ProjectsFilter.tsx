@@ -11,6 +11,8 @@ type Props = {
     filters: Set<string>;
     setFiltersAction: React.Dispatch<React.SetStateAction<Set<string>>>;
 }
+const splitRegex = /,\s*/;
+
 export default function ProjectFilter({ filterOptions, filters, setFiltersAction }: Props) {
     const [filterInputText, setFilterInputText] = useState([...filters].join(', '));
     const debounceTimer = useRef<NodeJS.Timeout | null>(null);
@@ -48,7 +50,7 @@ export default function ProjectFilter({ filterOptions, filters, setFiltersAction
             </div>
             <div className="flex flex-wrap gap-2">
                 {[...filterOptions].map((skill, idx) => {
-                    const isActive = filterHasMatch(skill, filterInputText.split(/,\s*/));
+                    const isActive = filterHasMatch(skill, filterInputText.split(splitRegex));
                     return (
                         <ActionButton
                             key={idx}

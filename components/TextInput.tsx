@@ -46,7 +46,7 @@ export default function TextInput({
                 FORM_INPUT,
                 FOCUS,
                 {
-                    [HOVER_INNER_SHADOW]: !disabled,
+                    // [HOVER_INNER_SHADOW]: !disabled,
                     'cursor-default': disabled
                 }
             )} />

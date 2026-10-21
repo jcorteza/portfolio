@@ -25,7 +25,7 @@ export default function GlobalError({
             className={`${specialGoth.variable} ${specialGothCond.variable} h-full antialiased`}
         >
             <body className="min-h-full min-w-0 flex justify-center items-stretch">
-                <div className="min-h-full min-w-0 flex flex-col gap-5 md:gap-10 w-5xl px-5 py-5">
+                <div className="relative min-h-full min-w-0 flex flex-col gap-5 md:gap-10 w-5xl px-5 py-5">
                     <NavBar/>
                     <StatusCard status={500} retryAction={retry} />
                     <hr aria-hidden className="text-brand-ink" />

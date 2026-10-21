@@ -38,7 +38,7 @@ export default function Home() {
                 <div className="w-full min-w-0 flex flex-col gap-4 text-body-text">
                     <h2 className={TEXT.cardTitle}>Projects</h2>
                     <div className={clsx('flex items-center flex-col gap-4 md:grid md:grid-cols-2 md:gap-10')}>
-                        <Image loading='eager' src={symday.imageUrl} width={symday.imageWidth} height={symday.imageHeight} alt={symday.imageAlt} className='w-full min-w-0' />
+                        <Image loading='eager' src={`/images/symday.png`} alt={symday.imageAlt} width={1500} height={1125} className='rounded-sm border border-(--card-line) w-full min-w-0' />
                         <div className='flex flex-col gap-2.25'>
                             <h3 className='flex flex-col gap-2.25'>
                                 <div className={DECORATIVE_TAG}>Featured Project</div>

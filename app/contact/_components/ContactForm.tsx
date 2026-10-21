@@ -238,7 +238,8 @@ export default function ContactForm() {
                             disabled={isDisabled}
                             required
                             aria-invalid={!!messageError}
-                            className={clsx(FORM_INPUT, FOCUS, 'h-35', { [HOVER_INNER_SHADOW]: !isDisabled, 'cursor-default': isDisabled })} />
+                            className={clsx(FORM_INPUT, FOCUS, 'h-35', { 'cursor-default': isDisabled })} />
+                            {/* className={clsx(FORM_INPUT, FOCUS, 'h-35', { [HOVER_INNER_SHADOW]: !isDisabled, 'cursor-default': isDisabled })} /> */}
                     </LabeledField>
                     {InlineError(messageErrorId, messageError)}
                 </div>
