@@ -25,7 +25,7 @@ const projectEntries = Object.entries(projects)
 const dl = (title: string, text?: string, skills?: string[]) => (
     <div className={clsx('w-full min-w-0 flex flex-col gap-1', { 'md:col-span-4': skills })}>
         <dt className="font-bold text-ink-muted">{title}</dt>
-        <dd className="text-brand-ink">{text || <SkillsTags skills={skills as string[]} />}</dd>
+        <dd className="text-body-text">{text || <SkillsTags skills={skills as string[]} />}</dd>
     </div>
 );
 
@@ -97,19 +97,19 @@ export default async function ProjectCaseStudy({ params }: { params: Promise<{ p
             <ol className='flex flex-col gap-4'>
                 <Content />
             </ol>
-            {(hasPrev || hasNext) && <hr aria-hidden className="text-brand-ink" />}
+            {(hasPrev || hasNext) && <hr aria-hidden className="text-card-edge" />}
             <nav className={clsx(
                 'w-full min-w-0',
                 { 'flex flex-col gap-2': hasPrev && hasNext }
             )}>
                 {hasPrev &&
                     <Link href={`/projects/${projectEntries[projectIdx - 1][0]}`} className="w-full min-w-0 flex flex-col items-start">
-                        <p className="font-bold text-brand-ink text-sm uppercase">Previous Project</p>
+                        <p className="font-bold text-body-text text-sm uppercase">Previous Project</p>
                         <p className={clsx(TEXT.cardSubtitle, 'underline')}>{projectEntries[projectIdx - 1][1].title}</p>
                     </Link>}
                 {hasNext &&
                     <Link href={`/projects/${projectEntries[projectIdx + 1][0]}`} className="w-full min-w-0 flex flex-col items-end">
-                        <p className="font-bold text-brand-ink text-sm uppercase">Next Project</p>
+                        <p className="font-bold text-body-text text-sm uppercase">Next Project</p>
                         <p className={clsx(TEXT.cardSubtitle, 'underline')}>{projectEntries[projectIdx + 1][1].title}</p>
                     </Link>}
             </nav>

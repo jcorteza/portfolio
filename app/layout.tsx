@@ -23,7 +23,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
                 <NavBar />
                 <div className="min-h-full min-w-0 w-full flex flex-col gap-5 md:gap-10 max-w-5xl px-5 py-5">
                     {children}
-                    <hr aria-hidden className="text-brand-ink" />
+                    <hr aria-hidden className="text-card-edge" />
                     <Footer />
                 </div>
             </body>
